@@ -13,6 +13,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaNegocio", "CapaNegocio\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaPresentacion", "CapaPresentacion\CapaPresentacion.vbproj", "{CF07A5AB-8D8D-43D3-B19E-2B78DD026355}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{4DCE6FA8-E986-4E42-A2EB-F5F17334B862}"
+	ProjectSection(SolutionItems) = preProject
+		DatabaseHeladeria.accdb = DatabaseHeladeria.accdb
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +49,7 @@ Global
 		{9AD0E642-3DDB-466B-96E7-D6BA01DAF3A1} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 		{DED1FC3B-26FC-47ED-8D39-810499255FB0} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 		{CF07A5AB-8D8D-43D3-B19E-2B78DD026355} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
+		{4DCE6FA8-E986-4E42-A2EB-F5F17334B862} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7400FC4-9DF8-4198-B1CB-DE5A1F9C0BEC}
