@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDClientes.vb" />
     <Compile Include="CDConexion.vb" />
     <Compile Include="CDDatosIva.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

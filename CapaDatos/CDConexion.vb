@@ -9,5 +9,4 @@ Public Class CDConexion
         getConnection = New OleDbConnection(connString)
     End Function
 
-
 End Class
