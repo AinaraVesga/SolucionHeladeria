@@ -6,7 +6,7 @@ Public Class CNClientes
 
     ' Funcion que devuelve la lista de clientes
     Public Function ObtenerClientes() As DataTable
-        Return objCapaDatos.QryListarClientes
+        Return objCapaDatos.QryListarClientes()
     End Function
 
 End Class

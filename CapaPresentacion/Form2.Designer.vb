@@ -23,15 +23,16 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.panMenu = New System.Windows.Forms.Panel()
-        Me.btnClientes = New System.Windows.Forms.Button()
-        Me.btnVentas = New System.Windows.Forms.Button()
-        Me.btnStock = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnProductos = New System.Windows.Forms.Button()
+        Me.btnStock = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
+        Me.btnClientes = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
         Me.panClientes = New System.Windows.Forms.Panel()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
-        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.panMenu.SuspendLayout()
         Me.panClientes.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,32 +52,16 @@ Partial Class Form2
         Me.panMenu.Size = New System.Drawing.Size(158, 450)
         Me.panMenu.TabIndex = 0
         '
-        'btnClientes
+        'lblTitulo
         '
-        Me.btnClientes.Location = New System.Drawing.Point(0, 145)
-        Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Size = New System.Drawing.Size(158, 31)
-        Me.btnClientes.TabIndex = 1
-        Me.btnClientes.Text = "CLIENTES"
-        Me.btnClientes.UseVisualStyleBackColor = True
-        '
-        'btnVentas
-        '
-        Me.btnVentas.Location = New System.Drawing.Point(0, 182)
-        Me.btnVentas.Name = "btnVentas"
-        Me.btnVentas.Size = New System.Drawing.Size(158, 31)
-        Me.btnVentas.TabIndex = 2
-        Me.btnVentas.Text = "VENTAS"
-        Me.btnVentas.UseVisualStyleBackColor = True
-        '
-        'btnStock
-        '
-        Me.btnStock.Location = New System.Drawing.Point(0, 219)
-        Me.btnStock.Name = "btnStock"
-        Me.btnStock.Size = New System.Drawing.Size(158, 31)
-        Me.btnStock.TabIndex = 3
-        Me.btnStock.Text = "STOCK"
-        Me.btnStock.UseVisualStyleBackColor = True
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblTitulo.Location = New System.Drawing.Point(30, 28)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(100, 24)
+        Me.lblTitulo.TabIndex = 5
+        Me.lblTitulo.Text = "Heladería"
         '
         'btnProductos
         '
@@ -87,6 +72,33 @@ Partial Class Form2
         Me.btnProductos.Text = "PRODUCTOS"
         Me.btnProductos.UseVisualStyleBackColor = True
         '
+        'btnStock
+        '
+        Me.btnStock.Location = New System.Drawing.Point(0, 219)
+        Me.btnStock.Name = "btnStock"
+        Me.btnStock.Size = New System.Drawing.Size(158, 31)
+        Me.btnStock.TabIndex = 3
+        Me.btnStock.Text = "STOCK"
+        Me.btnStock.UseVisualStyleBackColor = True
+        '
+        'btnVentas
+        '
+        Me.btnVentas.Location = New System.Drawing.Point(0, 182)
+        Me.btnVentas.Name = "btnVentas"
+        Me.btnVentas.Size = New System.Drawing.Size(158, 31)
+        Me.btnVentas.TabIndex = 2
+        Me.btnVentas.Text = "VENTAS"
+        Me.btnVentas.UseVisualStyleBackColor = True
+        '
+        'btnClientes
+        '
+        Me.btnClientes.Location = New System.Drawing.Point(0, 145)
+        Me.btnClientes.Name = "btnClientes"
+        Me.btnClientes.Size = New System.Drawing.Size(158, 31)
+        Me.btnClientes.TabIndex = 1
+        Me.btnClientes.Text = "CLIENTES"
+        Me.btnClientes.UseVisualStyleBackColor = True
+        '
         'txtBuscar
         '
         Me.txtBuscar.Location = New System.Drawing.Point(40, 20)
@@ -96,15 +108,16 @@ Partial Class Form2
         '
         'btnNuevoCliente
         '
-        Me.btnNuevoCliente.Location = New System.Drawing.Point(395, 20)
+        Me.btnNuevoCliente.Location = New System.Drawing.Point(479, 20)
         Me.btnNuevoCliente.Name = "btnNuevoCliente"
-        Me.btnNuevoCliente.Size = New System.Drawing.Size(181, 23)
+        Me.btnNuevoCliente.Size = New System.Drawing.Size(97, 23)
         Me.btnNuevoCliente.TabIndex = 2
         Me.btnNuevoCliente.Text = "Nuevo Cliente"
         Me.btnNuevoCliente.UseVisualStyleBackColor = True
         '
         'panClientes
         '
+        Me.panClientes.Controls.Add(Me.btnBuscar)
         Me.panClientes.Controls.Add(Me.dgvClientes)
         Me.panClientes.Controls.Add(Me.btnNuevoCliente)
         Me.panClientes.Controls.Add(Me.txtBuscar)
@@ -121,16 +134,14 @@ Partial Class Form2
         Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
         Me.dgvClientes.TabIndex = 3
         '
-        'lblTitulo
+        'btnBuscar
         '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblTitulo.Location = New System.Drawing.Point(30, 28)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(100, 24)
-        Me.lblTitulo.TabIndex = 5
-        Me.lblTitulo.Text = "Heladería"
+        Me.btnBuscar.Location = New System.Drawing.Point(271, 16)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(58, 27)
+        Me.btnBuscar.TabIndex = 4
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'Form2
         '
@@ -160,4 +171,5 @@ Partial Class Form2
     Friend WithEvents panClientes As Panel
     Friend WithEvents dgvClientes As DataGridView
     Friend WithEvents lblTitulo As Label
+    Friend WithEvents btnBuscar As Button
 End Class
