@@ -1,5 +1,5 @@
 ﻿Imports CapaNegocio
-Public Class Form2
+Public Class Cliente
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarClientes()

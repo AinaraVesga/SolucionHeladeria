@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class Cliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -128,7 +128,12 @@ Partial Class Form2
         '
         'dgvClientes
         '
+        Me.dgvClientes.AllowUserToAddRows = False
+        Me.dgvClientes.AllowUserToDeleteRows = False
+        Me.dgvClientes.AllowUserToResizeColumns = False
+        Me.dgvClientes.AllowUserToResizeRows = False
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvClientes.Location = New System.Drawing.Point(37, 80)
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
@@ -143,15 +148,15 @@ Partial Class Form2
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'Form2
+        'Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.panClientes)
         Me.Controls.Add(Me.panMenu)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Name = "Cliente"
+        Me.Text = "Cliente"
         Me.panMenu.ResumeLayout(False)
         Me.panMenu.PerformLayout()
         Me.panClientes.ResumeLayout(False)
