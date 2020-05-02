@@ -1,5 +1,6 @@
 ﻿Imports System.Data
 Imports System.Data.OleDb
+Imports CapaEntidad
 
 Public Class CDClientes
 
@@ -32,6 +33,36 @@ Public Class CDClientes
         sqlCommand.Dispose()
         conn.Close()
         Return table
+    End Function
+
+    'Insertar nuevo cliente
+    Public Function CmdInsert(c As CECliente)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "INSERT INTO CLIENTES 
+                 (IDCLIENTE, NOMBRE, DIRECCION, POBLACION, CIF, EMAIL, NCUENTA, RE, FACTURACION) VALUES 
+                 (@id, @nombre, @direccion, @poblacion, @cif, @email, @ncuenta, @re, @facturacion)"
+            cmd.Parameters.AddWithValue("@id", c.idcliente)
+            cmd.Parameters.AddWithValue("@nombre", c.nombre)
+            cmd.Parameters.AddWithValue("@direccion", c.direccion)
+            cmd.Parameters.AddWithValue("@poblacion", c.poblacion)
+            cmd.Parameters.AddWithValue("@cif", c.cif)
+            cmd.Parameters.AddWithValue("@email", c.email)
+            cmd.Parameters.AddWithValue("@ncuenta", c.ncuenta)
+            cmd.Parameters.AddWithValue("@re", c.re)
+            cmd.Parameters.AddWithValue("@facturacion", c.facturacion)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+        End Try
+        Return ok
     End Function
 
 End Class
