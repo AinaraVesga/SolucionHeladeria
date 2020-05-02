@@ -17,5 +17,12 @@ Public Class FormNuevoCliente
         ' Seleccionamos NINGUNO primero
         Dim index = cboFacturacion.FindString("NINGUNO")
         cboFacturacion.SelectedIndex = index
+
+    End Sub
+
+    Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
+        Dim formNuevaFact As New FormNuevaFacturacion
+        formNuevaFact.Show()
+        Close()
     End Sub
 End Class

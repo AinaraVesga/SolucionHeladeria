@@ -18,4 +18,18 @@
         _frecuencia = row("FRECUENCIA")
     End Sub
 
+    ' Propiedades
+    Public ReadOnly Property idfacturacion As String
+        Get
+            Return _idfacturacion
+        End Get
+    End Property
+
+    Public ReadOnly Property frecuencia As String
+        Get
+            Return _frecuencia
+        End Get
+    End Property
+
+
 End Class
