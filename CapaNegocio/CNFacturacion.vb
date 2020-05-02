@@ -29,7 +29,6 @@ Public Class CNFacturacion
     Public Function insertFacturacion(id As String, frecuencia As String)
         Dim fact As New CEFacturacion(id, frecuencia)
         Dim ok = objCapaDatos.CmdInsert(fact)
-
         Return ok
     End Function
 

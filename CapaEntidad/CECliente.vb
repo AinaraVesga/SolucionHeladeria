@@ -8,7 +8,7 @@
     Private _cif As String
     Private _email As String
     Private _ncuenta As String
-    Private _re As Boolean
+    Private _re As Integer
     Private _facturacion As String
 
     ' Constructora
@@ -17,7 +17,7 @@
     End Sub
 
     Public Sub New(id As String, nombre As String, direccion As String, poblacion As String, telefono As String, cif As String,
-                   email As String, ncuenta As String, re As Boolean, facturacion As String)
+                   email As String, ncuenta As String, re As Integer, facturacion As String)
         _id = id
         _nombre = nombre
         _direccion = direccion
@@ -85,7 +85,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property re As Boolean
+    Public ReadOnly Property re As Integer
         Get
             Return _re
         End Get
