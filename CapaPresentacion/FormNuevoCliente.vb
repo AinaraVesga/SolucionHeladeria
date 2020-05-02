@@ -1,21 +1,17 @@
-﻿Public Class FormNuevoCliente
-    Private Sub lbl_Click(sender As Object, e As EventArgs)
+﻿Imports CapaNegocio
 
+Public Class FormNuevoCliente
+
+    Private Sub FormNuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        listarFrecuenciaCbo()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblCuenta.Click
+    Private Sub listarFrecuenciaCbo()
+        Dim objCapaNegocio As New CNFacturacion
+        Dim frec = objCapaNegocio.frecuencias()
 
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtCuenta.TextChanged
-
-    End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles cbRecargo.CheckedChanged
-
-    End Sub
-
-    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lblFacturacion.Click
-
+        cboFacturacion.DataSource = frec
+        cboFacturacion.DisplayMember = "FRECUENCIA"
+        cboFacturacion.ValueMember = "FRECUENCIA"
     End Sub
 End Class

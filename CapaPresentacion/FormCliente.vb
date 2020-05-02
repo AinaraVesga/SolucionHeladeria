@@ -10,10 +10,6 @@ Public Class Cliente
         dgvClientes.DataSource = objCapaNegocio.ObtenerClientes()
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-
-    End Sub
-
     Private Sub btnNuevoCliente_Click(sender As Object, e As EventArgs) Handles btnNuevoCliente.Click
         Dim fNuevoCliente As New FormNuevoCliente()
         fNuevoCliente.Show()

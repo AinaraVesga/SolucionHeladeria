@@ -41,7 +41,7 @@ Partial Class FormNuevoCliente
         Me.txtCuenta = New System.Windows.Forms.TextBox()
         Me.lblCuenta = New System.Windows.Forms.Label()
         Me.cbRecargo = New System.Windows.Forms.CheckBox()
-        Me.cobFacturacion = New System.Windows.Forms.ComboBox()
+        Me.cboFacturacion = New System.Windows.Forms.ComboBox()
         Me.lblFacturacion = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.panTitulo.SuspendLayout()
@@ -80,6 +80,7 @@ Partial Class FormNuevoCliente
         '
         'txtIdentificador
         '
+        Me.txtIdentificador.Enabled = False
         Me.txtIdentificador.Location = New System.Drawing.Point(34, 95)
         Me.txtIdentificador.Name = "txtIdentificador"
         Me.txtIdentificador.ReadOnly = True
@@ -208,13 +209,14 @@ Partial Class FormNuevoCliente
         Me.cbRecargo.Text = "Recargo de Equivalencia"
         Me.cbRecargo.UseVisualStyleBackColor = True
         '
-        'cobFacturacion
+        'cboFacturacion
         '
-        Me.cobFacturacion.FormattingEnabled = True
-        Me.cobFacturacion.Location = New System.Drawing.Point(401, 329)
-        Me.cobFacturacion.Name = "cobFacturacion"
-        Me.cobFacturacion.Size = New System.Drawing.Size(336, 21)
-        Me.cobFacturacion.TabIndex = 19
+        Me.cboFacturacion.CausesValidation = False
+        Me.cboFacturacion.FormattingEnabled = True
+        Me.cboFacturacion.Location = New System.Drawing.Point(401, 329)
+        Me.cboFacturacion.Name = "cboFacturacion"
+        Me.cboFacturacion.Size = New System.Drawing.Size(336, 21)
+        Me.cboFacturacion.TabIndex = 19
         '
         'lblFacturacion
         '
@@ -241,7 +243,7 @@ Partial Class FormNuevoCliente
         Me.ClientSize = New System.Drawing.Size(775, 485)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblFacturacion)
-        Me.Controls.Add(Me.cobFacturacion)
+        Me.Controls.Add(Me.cboFacturacion)
         Me.Controls.Add(Me.cbRecargo)
         Me.Controls.Add(Me.txtCuenta)
         Me.Controls.Add(Me.lblCuenta)
@@ -288,7 +290,7 @@ Partial Class FormNuevoCliente
     Friend WithEvents txtCuenta As TextBox
     Friend WithEvents lblCuenta As Label
     Friend WithEvents cbRecargo As CheckBox
-    Friend WithEvents cobFacturacion As ComboBox
+    Friend WithEvents cboFacturacion As ComboBox
     Friend WithEvents lblFacturacion As Label
     Friend WithEvents btnAceptar As Button
 End Class
