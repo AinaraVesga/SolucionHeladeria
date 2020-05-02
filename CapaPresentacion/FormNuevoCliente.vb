@@ -13,5 +13,9 @@ Public Class FormNuevoCliente
         cboFacturacion.DataSource = frec
         cboFacturacion.DisplayMember = "FRECUENCIA"
         cboFacturacion.ValueMember = "FRECUENCIA"
+
+        ' Seleccionamos NINGUNO primero
+        Dim index = cboFacturacion.FindString("NINGUNO")
+        cboFacturacion.SelectedIndex = index
     End Sub
 End Class

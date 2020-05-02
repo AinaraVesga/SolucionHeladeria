@@ -44,6 +44,7 @@ Partial Class FormNuevoCliente
         Me.cboFacturacion = New System.Windows.Forms.ComboBox()
         Me.lblFacturacion = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.panTitulo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -215,7 +216,7 @@ Partial Class FormNuevoCliente
         Me.cboFacturacion.FormattingEnabled = True
         Me.cboFacturacion.Location = New System.Drawing.Point(401, 329)
         Me.cboFacturacion.Name = "cboFacturacion"
-        Me.cboFacturacion.Size = New System.Drawing.Size(336, 21)
+        Me.cboFacturacion.Size = New System.Drawing.Size(258, 21)
         Me.cboFacturacion.TabIndex = 19
         '
         'lblFacturacion
@@ -236,11 +237,21 @@ Partial Class FormNuevoCliente
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(665, 327)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(72, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Añadir"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FormNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 485)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblFacturacion)
         Me.Controls.Add(Me.cboFacturacion)
@@ -293,4 +304,5 @@ Partial Class FormNuevoCliente
     Friend WithEvents cboFacturacion As ComboBox
     Friend WithEvents lblFacturacion As Label
     Friend WithEvents btnAceptar As Button
+    Friend WithEvents Button1 As Button
 End Class
