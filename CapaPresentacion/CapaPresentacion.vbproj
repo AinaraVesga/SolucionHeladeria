@@ -79,6 +79,12 @@
     <Compile Include="FormCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormNuevoCliente.Designer.vb">
+      <DependentUpon>FormNuevoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +105,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoCliente.resx">
+      <DependentUpon>FormNuevoCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
