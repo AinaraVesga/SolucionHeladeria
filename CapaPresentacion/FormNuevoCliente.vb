@@ -28,11 +28,11 @@ Public Class FormNuevoCliente
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim objCliente As New CNClientes
-        'Dim ok = objCliente.insertCliente("abc", txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
-        'txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, True,
-        '                                 "")
-        Dim ok = objCliente.insertCliente("ain", "abc", "abc", "abc",
-                                          "abc", "abc", "abc", "abc", -1, "NIN")
+        Dim re = objCliente.reSeleccionado(cbRecargo.Checked)
+        Dim ok = objCliente.insertCliente("xza", txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
+                                          txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, "NIN")
+        'Dim ok = objCliente.insertCliente("ain", "abc", "abc", "abc",
+        '                                 "abc", "abc", "abc", "abc", -1, "NIN")
         If ok Then
             MessageBox.Show("Se ha insertado correctamente.")
         Else

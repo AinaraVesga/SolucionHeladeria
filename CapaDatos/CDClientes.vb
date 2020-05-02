@@ -61,7 +61,7 @@ Public Class CDClientes
             Console.WriteLine(ex.Message)
             ok = False
         Finally
-            If conn.State = ConnectionState.Open Then conn.Close()
+            conn.Close()
         End Try
         Return ok
     End Function

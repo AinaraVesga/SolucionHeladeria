@@ -19,4 +19,15 @@ Public Class CNClientes
         Return ok
     End Function
 
+    'Función para obtener RE
+    Public Function reSeleccionado(cb As Boolean)
+
+        If cb Then
+            Return -1
+        Else
+            Return 0
+        End If
+
+    End Function
+
 End Class
