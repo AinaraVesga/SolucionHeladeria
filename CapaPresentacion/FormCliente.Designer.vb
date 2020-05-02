@@ -31,8 +31,8 @@ Partial Class Cliente
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
         Me.panClientes = New System.Windows.Forms.Panel()
-        Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.panMenu.SuspendLayout()
         Me.panClientes.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,6 +126,15 @@ Partial Class Cliente
         Me.panClientes.Size = New System.Drawing.Size(637, 364)
         Me.panClientes.TabIndex = 2
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(271, 16)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(58, 27)
+        Me.btnBuscar.TabIndex = 4
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
         'dgvClientes
         '
         Me.dgvClientes.AllowUserToAddRows = False
@@ -138,15 +147,6 @@ Partial Class Cliente
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
         Me.dgvClientes.TabIndex = 3
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(271, 16)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(58, 27)
-        Me.btnBuscar.TabIndex = 4
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'Cliente
         '
