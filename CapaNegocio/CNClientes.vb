@@ -58,4 +58,10 @@ Public Class CNClientes
         Return newID
     End Function
 
+    ' Funcion para generar una instancia de un cliente
+    Public Function generarCliente(row As DataRow)
+        Dim cliente As New CECliente(row)
+        Return cliente
+    End Function
+
 End Class

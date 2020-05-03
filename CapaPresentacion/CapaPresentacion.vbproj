@@ -79,6 +79,12 @@
     <Compile Include="FormCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditarCliente.Designer.vb">
+      <DependentUpon>FormEditarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormNuevaFacturacion.Designer.vb">
       <DependentUpon>FormNuevaFacturacion.vb</DependentUpon>
     </Compile>
@@ -111,6 +117,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevaFacturacion.resx">
       <DependentUpon>FormNuevaFacturacion.vb</DependentUpon>

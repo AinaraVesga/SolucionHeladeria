@@ -19,4 +19,11 @@ Public Class Cliente
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         dgvClientes.DataSource = objCapaNegocio.ObtenerClientesFiltro(txtBuscar.Text)
     End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim row As DataRow = DirectCast(dgvClientes.CurrentRow.DataBoundItem, DataRow)
+        Dim cliente = objCapaNegocio.generarCliente(row)
+        FormEditarCliente.Show()
+
+    End Sub
 End Class

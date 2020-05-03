@@ -137,6 +137,7 @@ Partial Class Cliente
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvClientes.Location = New System.Drawing.Point(37, 80)
+        Me.dgvClientes.MultiSelect = False
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
         Me.dgvClientes.TabIndex = 3
