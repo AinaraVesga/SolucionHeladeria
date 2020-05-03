@@ -8,7 +8,7 @@ Public Class CDFacturacion
 
     ' Listamos los nombres de los tipos de facturacion
     Function QryListarFacturacionNames() As DataTable
-        Dim query = "SELECT FRECUENCIA FROM FACTURACIONES"
+        Dim query = "SELECT * FROM FACTURACIONES"
         Dim conn = conexion.getConnection()
         conn.Open()
         Dim command = New OleDbCommand(query, conn)
