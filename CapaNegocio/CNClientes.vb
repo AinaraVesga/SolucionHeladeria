@@ -27,7 +27,30 @@ Public Class CNClientes
         Else
             Return 0
         End If
+    End Function
 
+    ' Funcion para obtener el ultimo registro de clientes
+    Public Function idUltCliente()
+        Dim row = objCapaDatos.QryUltimoCliente
+        Dim ultimo As New CECliente(row)
+        Return ultimo.idcliente
+    End Function
+
+    ' Funcion para obtener el id de un nuevo cliente
+    Public Function nuevoID()
+        Dim ultID As String = idUltCliente()
+        Dim letra As Char = ultID.Substring(0, 1)
+        Dim num As Integer = ultID.Substring(1, ultID.Length - 1)
+        Dim newID As String
+
+        If num < 999 Then
+            num = num + 1
+            newID = letra + num.ToString().PadLeft(3, "0")
+        Else
+            letra = Chr(Asc(letra) + 1)
+            newID = letra + 1.ToString().PadLeft(3, "0")
+        End If
+        Return newID
     End Function
 
 End Class

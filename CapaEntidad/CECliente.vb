@@ -34,6 +34,14 @@
     Public Sub New(row As DataRow)
         _id = row("IDCLIENTE")
         _nombre = row("NOMBRE")
+        _direccion = row("DIRECCION")
+        _poblacion = row("POBLACION")
+        _telefono = row("TELEFONO")
+        _cif = row("CIF")
+        _email = row("EMAIL")
+        _ncuenta = row("NCUENTA")
+        _re = row("RE")
+        _facturacion = row("FACTURACION")
     End Sub
 
     ' Propiedades

@@ -2,10 +2,14 @@
 
 Public Class FormNuevoCliente
 
+    Dim objCliente As New CNClientes
     Dim objFacturacion As New CNFacturacion
     Dim tablaFrec = objFacturacion.frecuencias()
 
     Private Sub FormNuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim id As String = objCliente.nuevoID()
+        txtID.Text = id
+
         listarFrecuenciaCbo()
     End Sub
 
@@ -28,13 +32,12 @@ Public Class FormNuevoCliente
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        Dim objCliente As New CNClientes
+
         Dim re = objCliente.reSeleccionado(cbRecargo.Checked)
+        Dim fa = cboFacturacion.SelectedValue
 
-        Dim prueba = cboFacturacion.SelectedValue
-
-        Dim ok = objCliente.insertCliente("xzf", txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
-                                          txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, prueba)
+        Dim ok = objCliente.insertCliente(txtID.Text, txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
+                                          txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, fa)
         'Dim ok = objCliente.insertCliente("ain", "abc", "abc", "abc",
         '                                 "abc", "abc", "abc", "abc", -1, "NIN")
         If ok Then

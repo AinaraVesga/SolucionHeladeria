@@ -35,6 +35,21 @@ Public Class CDClientes
         Return table
     End Function
 
+    ' Obtener el último cliente registrado
+    Function QryUltimoCliente() As DataRow
+        Dim query = "SELECT * FROM CLIENTES AS C, (SELECT Max(IDCLIENTE) AS ULTIMO FROM CLIENTES) AS U WHERE C.IDCLIENTE LIKE U.ULTIMO"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader()
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Dim row = table.Select.FirstOrDefault()
+        Return row
+    End Function
+
     'Insertar nuevo cliente
     Public Function CmdInsert(c As CECliente)
         Dim ok = False

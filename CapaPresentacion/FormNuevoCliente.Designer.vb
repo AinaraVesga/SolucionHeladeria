@@ -25,7 +25,6 @@ Partial Class FormNuevoCliente
         Me.panTitulo = New System.Windows.Forms.Panel()
         Me.lblNuevoCliente = New System.Windows.Forms.Label()
         Me.lblIdent = New System.Windows.Forms.Label()
-        Me.txtIdentificador = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -45,6 +44,7 @@ Partial Class FormNuevoCliente
         Me.lblFacturacion = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.panTitulo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,15 +78,6 @@ Partial Class FormNuevoCliente
         Me.lblIdent.Size = New System.Drawing.Size(68, 13)
         Me.lblIdent.TabIndex = 1
         Me.lblIdent.Text = "Identificador:"
-        '
-        'txtIdentificador
-        '
-        Me.txtIdentificador.Enabled = False
-        Me.txtIdentificador.Location = New System.Drawing.Point(34, 95)
-        Me.txtIdentificador.Name = "txtIdentificador"
-        Me.txtIdentificador.ReadOnly = True
-        Me.txtIdentificador.Size = New System.Drawing.Size(337, 20)
-        Me.txtIdentificador.TabIndex = 2
         '
         'lblNombre
         '
@@ -246,11 +237,20 @@ Partial Class FormNuevoCliente
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = True
         '
+        'txtID
+        '
+        Me.txtID.Enabled = False
+        Me.txtID.Location = New System.Drawing.Point(34, 95)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(336, 20)
+        Me.txtID.TabIndex = 23
+        '
         'FormNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 485)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblFacturacion)
@@ -270,7 +270,6 @@ Partial Class FormNuevoCliente
         Me.Controls.Add(Me.lblDireccion)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblNombre)
-        Me.Controls.Add(Me.txtIdentificador)
         Me.Controls.Add(Me.lblIdent)
         Me.Controls.Add(Me.panTitulo)
         Me.Name = "FormNuevoCliente"
@@ -285,7 +284,6 @@ Partial Class FormNuevoCliente
     Friend WithEvents panTitulo As Panel
     Friend WithEvents lblNuevoCliente As Label
     Friend WithEvents lblIdent As Label
-    Friend WithEvents txtIdentificador As TextBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents txtDireccion As TextBox
@@ -305,4 +303,5 @@ Partial Class FormNuevoCliente
     Friend WithEvents lblFacturacion As Label
     Friend WithEvents btnAceptar As Button
     Friend WithEvents btnAñadir As Button
+    Friend WithEvents txtID As TextBox
 End Class
