@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Cliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Cliente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.panMenu = New System.Windows.Forms.Panel()
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -31,8 +31,9 @@ Partial Class Cliente
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
         Me.panClientes = New System.Windows.Forms.Panel()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.panMenu.SuspendLayout()
         Me.panClientes.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,7 +109,7 @@ Partial Class Cliente
         '
         'btnNuevoCliente
         '
-        Me.btnNuevoCliente.Location = New System.Drawing.Point(479, 20)
+        Me.btnNuevoCliente.Location = New System.Drawing.Point(478, 17)
         Me.btnNuevoCliente.Name = "btnNuevoCliente"
         Me.btnNuevoCliente.Size = New System.Drawing.Size(97, 23)
         Me.btnNuevoCliente.TabIndex = 2
@@ -117,7 +118,8 @@ Partial Class Cliente
         '
         'panClientes
         '
-        Me.panClientes.Controls.Add(Me.btnBuscar)
+        Me.panClientes.Controls.Add(Me.btnEditar)
+        Me.panClientes.Controls.Add(Me.btnEliminar)
         Me.panClientes.Controls.Add(Me.dgvClientes)
         Me.panClientes.Controls.Add(Me.btnNuevoCliente)
         Me.panClientes.Controls.Add(Me.txtBuscar)
@@ -125,15 +127,6 @@ Partial Class Cliente
         Me.panClientes.Name = "panClientes"
         Me.panClientes.Size = New System.Drawing.Size(637, 364)
         Me.panClientes.TabIndex = 2
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(271, 16)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(58, 27)
-        Me.btnBuscar.TabIndex = 4
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'dgvClientes
         '
@@ -147,6 +140,24 @@ Partial Class Cliente
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
         Me.dgvClientes.TabIndex = 3
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(375, 51)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(97, 23)
+        Me.btnEliminar.TabIndex = 4
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Location = New System.Drawing.Point(478, 51)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(97, 23)
+        Me.btnEditar.TabIndex = 5
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
         '
         'Cliente
         '
@@ -176,5 +187,6 @@ Partial Class Cliente
     Friend WithEvents panClientes As Panel
     Friend WithEvents dgvClientes As DataGridView
     Friend WithEvents lblTitulo As Label
-    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnEliminar As Button
 End Class

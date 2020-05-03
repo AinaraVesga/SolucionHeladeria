@@ -10,6 +10,11 @@ Public Class CNClientes
         Return objCapaDatos.QryListarClientes()
     End Function
 
+    ' Funcion que devuelve la lista de clientes segun parametro de entradaç
+    Public Function ObtenerClientesFiltro(filtro As String) As DataTable
+        Return objCapaDatos.QryListarClientesFiltro(filtro)
+    End Function
+
     ' Función para insertar un tipo de facturacion en la BD
     Public Function insertCliente(id As String, nombre As String, direccion As String, poblacion As String, telefono As String, cif As String,
                    email As String, ncuenta As String, re As Integer, facturacion As String)
