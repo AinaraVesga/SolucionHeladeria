@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,12 +88,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCliente.Designer.vb">
-      <DependentUpon>FormCliente.vb</DependentUpon>
+    <Compile Include="FormClientes.Designer.vb">
+      <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormCliente.vb">
+    <Compile Include="FormClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormInicio.Designer.vb">
+      <DependentUpon>FormInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.vb">
+      <DependentUpon>ZZZZZZ</DependentUpon>
+    </Compile>
+    <None Include="ZZZZZZ">
+      <SubType>Form</SubType>
+    </None>
     <Compile Include="FormEditarCliente.Designer.vb">
       <DependentUpon>FormEditarCliente.vb</DependentUpon>
     </Compile>
@@ -115,8 +142,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
-      <DependentUpon>FormCliente.vb</DependentUpon>
+      <DependentUpon>ZZZZZZ</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.vb</DependentUpon>
@@ -151,6 +184,18 @@
       <Project>{ded1fc3b-26fc-47ed-8d39-810499255fb0}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

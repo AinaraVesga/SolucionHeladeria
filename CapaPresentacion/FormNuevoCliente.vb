@@ -46,10 +46,10 @@ Public Class FormNuevoCliente
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
+        Dim fClientes As FormClientes = CType(Owner, FormClientes)
+        fClientes.listarClientes()
+
         Close()
     End Sub
 
-    Private Sub cboFacturacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFacturacion.SelectedIndexChanged
-
-    End Sub
 End Class

@@ -1,0 +1,50 @@
+﻿Imports CapaNegocio
+Public Class FormClientes
+    Dim objCapaNegocio As New CNClientes
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        listarClientes()
+    End Sub
+
+    Sub listarClientes()
+        dgvClientes.DataSource = objCapaNegocio.ObtenerClientes()
+    End Sub
+
+    Private Sub btnNuevoCliente_Click(sender As Object, e As EventArgs) Handles btnNuevoCliente.Click
+        Dim fNuevoCliente As New FormNuevoCliente()
+        AddOwnedForm(fNuevoCliente)
+        fNuevoCliente.ShowDialog()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        dgvClientes.DataSource = objCapaNegocio.ObtenerClientesFiltro(txtBuscar.Text)
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        editarClienteCampos()
+    End Sub
+
+    Private Sub dgvClientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellDoubleClick
+        editarClienteCampos()
+    End Sub
+
+    ' Funcion para pasar los datos al formulario de editar cliente
+    Public Sub editarClienteCampos()
+        If dgvClientes.SelectedRows.Count = 0 Then
+            Dim fEditarCliente As New FormEditarCliente
+            fEditarCliente.txtID.Text = dgvClientes.CurrentRow.Cells(0).Value.ToString
+            fEditarCliente.txtNombre.Text = dgvClientes.CurrentRow.Cells(1).Value.ToString
+            fEditarCliente.txtDireccion.Text = dgvClientes.CurrentRow.Cells(2).Value.ToString
+            fEditarCliente.txtPoblacion.Text = dgvClientes.CurrentRow.Cells(3).Value.ToString
+            fEditarCliente.txtTelefono.Text = dgvClientes.CurrentRow.Cells(4).Value.ToString
+            fEditarCliente.txtCIF.Text = dgvClientes.CurrentRow.Cells(5).Value.ToString
+            fEditarCliente.txtEmail.Text = dgvClientes.CurrentRow.Cells(6).Value.ToString
+            fEditarCliente.txtCuenta.Text = dgvClientes.CurrentRow.Cells(7).Value.ToString
+            fEditarCliente.cbRecargo.Checked = dgvClientes.CurrentRow.Cells(8).Value
+            ' Falta el combo box
+            fEditarCliente.ShowDialog()
+        Else
+            MessageBox.Show("Por favor seleccione una fila.")
+        End If
+    End Sub
+End Class

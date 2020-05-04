@@ -280,28 +280,27 @@ Partial Class FormEditarCliente
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txtID As TextBox
     Friend WithEvents btnAñadir As Button
     Friend WithEvents btnAceptar As Button
     Friend WithEvents lblFacturacion As Label
-    Friend WithEvents cboFacturacion As ComboBox
-    Friend WithEvents cbRecargo As CheckBox
-    Friend WithEvents txtCuenta As TextBox
     Friend WithEvents lblCuenta As Label
-    Friend WithEvents txtTelefono As TextBox
     Friend WithEvents lblTelefono As Label
-    Friend WithEvents txtEmail As TextBox
-    Friend WithEvents txtCIF As TextBox
     Friend WithEvents lblCIF As Label
-    Friend WithEvents txtPoblacion As TextBox
     Friend WithEvents lblPoblacion As Label
-    Friend WithEvents txtDireccion As TextBox
     Friend WithEvents lblDireccion As Label
-    Friend WithEvents txtNombre As TextBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents lblIdent As Label
     Friend WithEvents lblEditarCliente As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents panTitulo As Panel
+    Public WithEvents txtID As TextBox
+    Public WithEvents cboFacturacion As ComboBox
+    Public WithEvents cbRecargo As CheckBox
+    Public WithEvents txtCuenta As TextBox
+    Public WithEvents txtTelefono As TextBox
+    Public WithEvents txtEmail As TextBox
+    Public WithEvents txtCIF As TextBox
+    Public WithEvents txtPoblacion As TextBox
+    Public WithEvents txtDireccion As TextBox
+    Public WithEvents txtNombre As TextBox
 End Class
