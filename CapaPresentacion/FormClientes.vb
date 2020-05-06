@@ -1,4 +1,5 @@
 ﻿Imports CapaNegocio
+Imports CapaEntidad
 Public Class FormClientes
     Dim objCapaNegocio As New CNClientes
 
@@ -31,17 +32,20 @@ Public Class FormClientes
     ' Funcion para pasar los datos al formulario de editar cliente
     Public Sub editarClienteCampos()
         If dgvClientes.SelectedRows.Count = 0 Then
-            Dim fEditarCliente As New FormEditarCliente
-            fEditarCliente.txtID.Text = dgvClientes.CurrentRow.Cells(0).Value.ToString
-            fEditarCliente.txtNombre.Text = dgvClientes.CurrentRow.Cells(1).Value.ToString
-            fEditarCliente.txtDireccion.Text = dgvClientes.CurrentRow.Cells(2).Value.ToString
-            fEditarCliente.txtPoblacion.Text = dgvClientes.CurrentRow.Cells(3).Value.ToString
-            fEditarCliente.txtTelefono.Text = dgvClientes.CurrentRow.Cells(4).Value.ToString
-            fEditarCliente.txtCIF.Text = dgvClientes.CurrentRow.Cells(5).Value.ToString
-            fEditarCliente.txtEmail.Text = dgvClientes.CurrentRow.Cells(6).Value.ToString
-            fEditarCliente.txtCuenta.Text = dgvClientes.CurrentRow.Cells(7).Value.ToString
-            fEditarCliente.cbRecargo.Checked = dgvClientes.CurrentRow.Cells(8).Value
-            ' Falta el combo box
+            Dim row = dgvClientes.CurrentRow
+            Dim id = row.Cells(0).Value.ToString
+            Dim nombre = row.Cells(1).Value.ToString
+            Dim direccion = row.Cells(2).Value.ToString
+            Dim poblacion = row.Cells(3).Value.ToString
+            Dim telefono = row.Cells(4).Value.ToString
+            Dim cif = row.Cells(5).Value.ToString
+            Dim email = row.Cells(6).Value.ToString
+            Dim cuenta = row.Cells(7).Value.ToString
+            Dim re = row.Cells(8).Value
+            Dim fa = row.Cells(9).Value.ToString
+
+            Dim c As New CECliente(id, nombre, direccion, poblacion, telefono, cif, email, cuenta, re, fa)
+            Dim fEditarCliente As New FormEditarCliente(c)
             fEditarCliente.ShowDialog()
         Else
             MessageBox.Show("Por favor seleccione una fila.")

@@ -180,6 +180,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.vbproj">
+      <Project>{9ad0e642-3ddb-466b-96e7-d6ba01daf3a1}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.vbproj">
       <Project>{ded1fc3b-26fc-47ed-8d39-810499255fb0}</Project>
       <Name>CapaNegocio</Name>
