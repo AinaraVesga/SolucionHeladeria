@@ -68,7 +68,7 @@ Public Class FormEditarCliente
                                           txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, fa)
 
         If ok Then
-            MessageBox.Show("Se ha insertado correctamente.")
+            MessageBox.Show("Se ha actualizado correctamente.")
         Else
             MessageBox.Show("Ha ocurrido un error.")
         End If

@@ -52,4 +52,19 @@ Public Class FormClientes
             MessageBox.Show("Por favor seleccione una fila.")
         End If
     End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If dgvClientes.SelectedRows.Count = 0 Then
+            Dim row = dgvClientes.CurrentRow
+            Dim id = row.Cells(0).Value.ToString
+            Dim nombre = row.Cells(1).Value.ToString
+
+            Dim fEliminarCliente As New FormEliminarCliente(id, nombre)
+            AddOwnedForm(fEliminarCliente)
+            fEliminarCliente.ShowDialog()
+
+        Else
+            MessageBox.Show("Por favor seleccione una fila.")
+        End If
+    End Sub
 End Class
