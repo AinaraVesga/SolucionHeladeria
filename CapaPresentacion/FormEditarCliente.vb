@@ -64,7 +64,7 @@ Public Class FormEditarCliente
         Dim re = objCliente.reSeleccionado(cbRecargo.Checked)
         Dim fa = cboFacturacion.SelectedValue
 
-        Dim ok = objCliente.insertCliente(txtID.Text, txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
+        Dim ok = objCliente.updateCliente(txtID.Text, txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
                                           txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, fa)
 
         If ok Then
@@ -77,4 +77,5 @@ Public Class FormEditarCliente
         fClientes.listarClientes()
         Close()
     End Sub
+
 End Class

@@ -52,7 +52,7 @@ Public Class CDClientes
 
     'Insertar nuevo cliente
     Public Function CmdInsert(c As CECliente)
-        Console.WriteLine("aqui")
+
         Dim ok = False
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -84,6 +84,7 @@ Public Class CDClientes
 
     ' ACTUALIZAR REGISTRO DE UN CLIENTE
     Public Function CmdUpdate(c As CECliente)
+        Console.WriteLine("aqui")
         Dim ok = False
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -99,17 +100,17 @@ Public Class CDClientes
                 NCUENTA = @ncuenta,
                 RE = @re,
                 FACTURACION = @facturacion 
-                WHERE IDCLIENTE LIKE @id"
-            cmd.Parameters.AddWithValue("@id", c.idcliente)
+                WHERE IDCLIENTE = @id"
             cmd.Parameters.AddWithValue("@nombre", c.nombre)
             cmd.Parameters.AddWithValue("@direccion", c.direccion)
             cmd.Parameters.AddWithValue("@poblacion", c.poblacion)
-            cmd.Parameters.AddWithValue("@telefono", c.poblacion)
+            cmd.Parameters.AddWithValue("@telefono", c.telefono)
             cmd.Parameters.AddWithValue("@cif", c.cif)
             cmd.Parameters.AddWithValue("@email", c.email)
             cmd.Parameters.AddWithValue("@ncuenta", c.ncuenta)
             cmd.Parameters.AddWithValue("@re", c.re)
             cmd.Parameters.AddWithValue("@facturacion", c.facturacion)
+            cmd.Parameters.AddWithValue("@id", c.idcliente)
             cmd.ExecuteNonQuery()
             ok = True
         Catch ex As Exception

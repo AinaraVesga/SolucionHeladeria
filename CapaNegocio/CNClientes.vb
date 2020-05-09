@@ -28,6 +28,7 @@ Public Class CNClientes
     Public Function updateCliente(id As String, nombre As String, direccion As String, poblacion As String, telefono As String, cif As String,
                    email As String, ncuenta As String, re As Integer, facturacion As String)
         Dim cliente As New CECliente(id, nombre, direccion, poblacion, telefono, cif, email, ncuenta, re, facturacion)
+        MsgBox(cliente.nombre)
         Dim ok = objCapaDatos.CmdUpdate(cliente)
         Return ok
     End Function
