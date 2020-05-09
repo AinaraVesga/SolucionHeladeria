@@ -15,12 +15,20 @@ Public Class CNClientes
         Return objCapaDatos.QryListarClientesFiltro(filtro)
     End Function
 
-    ' Función para insertar un tipo de facturacion en la BD
+    ' Función para insertar un tipo de cliente en la BD
     Public Function insertCliente(id As String, nombre As String, direccion As String, poblacion As String, telefono As String, cif As String,
                    email As String, ncuenta As String, re As Integer, facturacion As String)
         Dim cliente As New CECliente(id, nombre, direccion, poblacion, telefono, cif, email, ncuenta, re, facturacion)
 
         Dim ok = objCapaDatos.CmdInsert(cliente)
+        Return ok
+    End Function
+
+    ' Funcion para actualizar un cliente en la BD
+    Public Function updateCliente(id As String, nombre As String, direccion As String, poblacion As String, telefono As String, cif As String,
+                   email As String, ncuenta As String, re As Integer, facturacion As String)
+        Dim cliente As New CECliente(id, nombre, direccion, poblacion, telefono, cif, email, ncuenta, re, facturacion)
+        Dim ok = objCapaDatos.CmdUpdate(cliente)
         Return ok
     End Function
 

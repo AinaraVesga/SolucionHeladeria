@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Consola</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.vbproj" />
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.vbproj" />
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.vbproj" />
+  </ItemGroup>
+
+</Project>

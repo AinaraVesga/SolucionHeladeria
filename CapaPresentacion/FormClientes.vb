@@ -46,6 +46,7 @@ Public Class FormClientes
 
             Dim c As New CECliente(id, nombre, direccion, poblacion, telefono, cif, email, cuenta, re, fa)
             Dim fEditarCliente As New FormEditarCliente(c)
+            AddOwnedForm(fEditarCliente)
             fEditarCliente.ShowDialog()
         Else
             MessageBox.Show("Por favor seleccione una fila.")

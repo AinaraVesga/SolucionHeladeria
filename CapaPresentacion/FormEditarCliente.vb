@@ -4,6 +4,7 @@ Imports CapaEntidad
 Public Class FormEditarCliente
 
     Dim objClienteE As New CECliente
+    Dim objCliente As New CNClientes
 
     Dim fa As String
 
@@ -32,7 +33,7 @@ Public Class FormEditarCliente
         txtCuenta.Text = c.ncuenta
         cbRecargo.Checked = c.re
         fa = c.facturacion
-        MsgBox(fa)
+        ' MsgBox(fa)
     End Sub
 
     Private Sub FormEditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -57,5 +58,23 @@ Public Class FormEditarCliente
         Dim formNuevaFact As New FormNuevaFacturacion("editar")
         AddOwnedForm(formNuevaFact)
         formNuevaFact.ShowDialog()
+    End Sub
+
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Dim re = objCliente.reSeleccionado(cbRecargo.Checked)
+        Dim fa = cboFacturacion.SelectedValue
+
+        Dim ok = objCliente.insertCliente(txtID.Text, txtNombre.Text, txtDireccion.Text, txtPoblacion.Text,
+                                          txtTelefono.Text, txtCIF.Text, txtEmail.Text, txtCuenta.Text, re, fa)
+
+        If ok Then
+            MessageBox.Show("Se ha insertado correctamente.")
+        Else
+            MessageBox.Show("Ha ocurrido un error.")
+        End If
+
+        Dim fClientes As FormClientes = CType(Owner, FormClientes)
+        fClientes.listarClientes()
+        Close()
     End Sub
 End Class

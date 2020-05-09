@@ -52,6 +52,7 @@ Public Class CDClientes
 
     'Insertar nuevo cliente
     Public Function CmdInsert(c As CECliente)
+        Console.WriteLine("aqui")
         Dim ok = False
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -88,7 +89,7 @@ Public Class CDClientes
         conn.Open()
         Try
             Dim cmd = conn.CreateCommand
-            cmd.CommandText = "UPDATE CLIENTES
+            cmd.CommandText = "UPDATE CLIENTES 
                 SET NOMBRE = @nombre,
                 DIRECCION = @direccion,
                 POBLACION = @poblacion,
@@ -97,7 +98,7 @@ Public Class CDClientes
                 EMAIL = @email,
                 NCUENTA = @ncuenta,
                 RE = @re,
-                FACTURACION = @facturacion
+                FACTURACION = @facturacion 
                 WHERE IDCLIENTE LIKE @id"
             cmd.Parameters.AddWithValue("@id", c.idcliente)
             cmd.Parameters.AddWithValue("@nombre", c.nombre)
