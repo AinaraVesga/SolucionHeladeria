@@ -4,8 +4,7 @@ Imports CapaEntidad
 Public Class FormEditarCliente
 
     Dim objClienteE As New CECliente
-    Dim objFacturacion As New CNFacturacion
-    Dim tablaFrec = objFacturacion.frecuencias()
+
     Dim fa As String
 
     Public Sub New()
@@ -38,11 +37,12 @@ Public Class FormEditarCliente
 
     Private Sub FormEditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarFrecuenciaCbo()
-
     End Sub
 
-    Private Sub listarFrecuenciaCbo()
+    Public Sub listarFrecuenciaCbo()
 
+        Dim objFacturacion As New CNFacturacion
+        Dim tablaFrec = objFacturacion.frecuencias()
         cboFacturacion.DataSource = tablaFrec
         cboFacturacion.DisplayMember = "FRECUENCIA"
         cboFacturacion.ValueMember = "IDFACTURACION"
@@ -51,5 +51,11 @@ Public Class FormEditarCliente
         Dim index = cboFacturacion.FindString(fa)
         cboFacturacion.SelectedIndex = index
 
+    End Sub
+
+    Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
+        Dim formNuevaFact As New FormNuevaFacturacion("editar")
+        AddOwnedForm(formNuevaFact)
+        formNuevaFact.ShowDialog()
     End Sub
 End Class

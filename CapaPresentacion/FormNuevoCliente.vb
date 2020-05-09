@@ -4,17 +4,17 @@ Public Class FormNuevoCliente
 
     Dim objCliente As New CNClientes
     Dim objFacturacion As New CNFacturacion
-    Dim tablaFrec = objFacturacion.frecuencias()
+
 
     Private Sub FormNuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim id As String = objCliente.nuevoID()
         txtID.Text = id
-
         listarFrecuenciaCbo()
     End Sub
 
-    Private Sub listarFrecuenciaCbo()
-
+    Public Sub listarFrecuenciaCbo()
+        Dim objFacturacion As New CNFacturacion
+        Dim tablaFrec = objFacturacion.frecuencias()
         cboFacturacion.DataSource = tablaFrec
         cboFacturacion.DisplayMember = "FRECUENCIA"
         cboFacturacion.ValueMember = "IDFACTURACION"
@@ -26,9 +26,9 @@ Public Class FormNuevoCliente
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        Dim formNuevaFact As New FormNuevaFacturacion
-        formNuevaFact.Show()
-        Close()
+        Dim formNuevaFact As New FormNuevaFacturacion("añadir")
+        AddOwnedForm(formNuevaFact)
+        formNuevaFact.ShowDialog()
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
@@ -48,7 +48,6 @@ Public Class FormNuevoCliente
 
         Dim fClientes As FormClientes = CType(Owner, FormClientes)
         fClientes.listarClientes()
-
         Close()
     End Sub
 

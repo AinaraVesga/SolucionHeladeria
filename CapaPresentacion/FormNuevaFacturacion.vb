@@ -2,6 +2,16 @@
 Public Class FormNuevaFacturacion
 
     Dim objFacturacion As New CNFacturacion
+    Dim origen As String
+
+    Public Sub New(f As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        origen = f
+    End Sub
 
     Private Sub txtFrecuencia_TextChanged(sender As Object, e As EventArgs) Handles txtFrecuencia.TextChanged
         txtIdent.Text = objFacturacion.idFacturacion(txtFrecuencia.Text)
@@ -14,12 +24,15 @@ Public Class FormNuevaFacturacion
         Else
             MessageBox.Show("Ha ocurrido un error.")
         End If
+        If origen = "añadir" Then
+            Dim fNuevoCliente As FormNuevoCliente = CType(Owner, FormNuevoCliente)
+            fNuevoCliente.listarFrecuenciaCbo()
+        ElseIf origen = "editar" Then
+            Dim fEditarCliente As FormEditarCliente = CType(Owner, FormEditarCliente)
+            fEditarCliente.listarFrecuenciaCbo()
+        End If
 
-        FormNuevoCliente.Show()
         Close()
     End Sub
 
-    Private Sub FormNuevaFacturacion_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        FormNuevoCliente.Show()
-    End Sub
 End Class
