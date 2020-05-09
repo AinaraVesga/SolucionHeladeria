@@ -1,4 +1,4 @@
-Imports System
+Imports System.Data
 Imports CapaDatos
 Imports CapaEntidad
 
@@ -12,7 +12,7 @@ Module Program
         Dim cliente As New CECliente("C012", "ELENA", "HARROBIETA", "IRUN", "636779427", "44567925L", "ELENA@GMAIL.COM", "1234", 0, "NIN")
 
         Console.WriteLine(cliente.cif)
-        Dim ok = objDClientes.QryListarClientes
+        objDClientes.QryListarClientes()
 
 
 
