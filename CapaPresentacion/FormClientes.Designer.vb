@@ -28,15 +28,25 @@ Partial Class FormClientes
         Me.btnStock = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnEditarE = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.panClientes = New System.Windows.Forms.Panel()
+        Me.panProductos = New System.Windows.Forms.Panel()
+        Me.btnEditarP = New System.Windows.Forms.Button()
+        Me.btnEliminarP = New System.Windows.Forms.Button()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
+        Me.btnAñadirP = New System.Windows.Forms.Button()
+        Me.txtBuscarP = New System.Windows.Forms.TextBox()
+        Me.panContenedor = New System.Windows.Forms.Panel()
         Me.panMenu.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panClientes.SuspendLayout()
+        Me.panProductos.SuspendLayout()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'panMenu
@@ -100,14 +110,14 @@ Partial Class FormClientes
         Me.btnClientes.Text = "CLIENTES"
         Me.btnClientes.UseVisualStyleBackColor = True
         '
-        'btnEditar
+        'btnEditarE
         '
-        Me.btnEditar.Location = New System.Drawing.Point(478, 51)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(97, 23)
-        Me.btnEditar.TabIndex = 5
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
+        Me.btnEditarE.Location = New System.Drawing.Point(478, 51)
+        Me.btnEditarE.Name = "btnEditarE"
+        Me.btnEditarE.Size = New System.Drawing.Size(97, 23)
+        Me.btnEditarE.TabIndex = 5
+        Me.btnEditarE.Text = "Editar"
+        Me.btnEditarE.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
@@ -129,7 +139,7 @@ Partial Class FormClientes
         Me.dgvClientes.Location = New System.Drawing.Point(37, 80)
         Me.dgvClientes.MultiSelect = False
         Me.dgvClientes.Name = "dgvClientes"
-        Me.dgvClientes.Size = New System.Drawing.Size(538, 258)
+        Me.dgvClientes.Size = New System.Drawing.Size(538, 358)
         Me.dgvClientes.TabIndex = 3
         '
         'btnNuevoCliente
@@ -143,30 +153,99 @@ Partial Class FormClientes
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(40, 20)
+        Me.txtBuscar.Location = New System.Drawing.Point(37, 53)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(225, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'panClientes
         '
-        Me.panClientes.Controls.Add(Me.btnEditar)
+        Me.panClientes.Controls.Add(Me.btnEditarE)
         Me.panClientes.Controls.Add(Me.btnEliminar)
         Me.panClientes.Controls.Add(Me.dgvClientes)
         Me.panClientes.Controls.Add(Me.btnNuevoCliente)
         Me.panClientes.Controls.Add(Me.txtBuscar)
-        Me.panClientes.Location = New System.Drawing.Point(164, 86)
+        Me.panClientes.Location = New System.Drawing.Point(0, 3)
         Me.panClientes.Name = "panClientes"
-        Me.panClientes.Size = New System.Drawing.Size(637, 364)
+        Me.panClientes.Size = New System.Drawing.Size(605, 447)
         Me.panClientes.TabIndex = 4
+        '
+        'panProductos
+        '
+        Me.panProductos.Controls.Add(Me.btnEditarP)
+        Me.panProductos.Controls.Add(Me.btnEliminarP)
+        Me.panProductos.Controls.Add(Me.dgvProductos)
+        Me.panProductos.Controls.Add(Me.btnAñadirP)
+        Me.panProductos.Controls.Add(Me.txtBuscarP)
+        Me.panProductos.Location = New System.Drawing.Point(0, 3)
+        Me.panProductos.Name = "panProductos"
+        Me.panProductos.Size = New System.Drawing.Size(605, 447)
+        Me.panProductos.TabIndex = 6
+        '
+        'btnEditarP
+        '
+        Me.btnEditarP.Location = New System.Drawing.Point(478, 51)
+        Me.btnEditarP.Name = "btnEditarP"
+        Me.btnEditarP.Size = New System.Drawing.Size(97, 23)
+        Me.btnEditarP.TabIndex = 5
+        Me.btnEditarP.Text = "Editar"
+        Me.btnEditarP.UseVisualStyleBackColor = True
+        '
+        'btnEliminarP
+        '
+        Me.btnEliminarP.Location = New System.Drawing.Point(375, 51)
+        Me.btnEliminarP.Name = "btnEliminarP"
+        Me.btnEliminarP.Size = New System.Drawing.Size(97, 23)
+        Me.btnEliminarP.TabIndex = 4
+        Me.btnEliminarP.Text = "Eliminar"
+        Me.btnEliminarP.UseVisualStyleBackColor = True
+        '
+        'dgvProductos
+        '
+        Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.AllowUserToDeleteRows = False
+        Me.dgvProductos.AllowUserToResizeColumns = False
+        Me.dgvProductos.AllowUserToResizeRows = False
+        Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvProductos.Location = New System.Drawing.Point(37, 80)
+        Me.dgvProductos.MultiSelect = False
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(538, 355)
+        Me.dgvProductos.TabIndex = 3
+        '
+        'btnAñadirP
+        '
+        Me.btnAñadirP.Location = New System.Drawing.Point(478, 17)
+        Me.btnAñadirP.Name = "btnAñadirP"
+        Me.btnAñadirP.Size = New System.Drawing.Size(97, 23)
+        Me.btnAñadirP.TabIndex = 2
+        Me.btnAñadirP.Text = "Nuevo Producto"
+        Me.btnAñadirP.UseVisualStyleBackColor = True
+        '
+        'txtBuscarP
+        '
+        Me.txtBuscarP.Location = New System.Drawing.Point(37, 53)
+        Me.txtBuscarP.Name = "txtBuscarP"
+        Me.txtBuscarP.Size = New System.Drawing.Size(225, 20)
+        Me.txtBuscarP.TabIndex = 1
+        '
+        'panContenedor
+        '
+        Me.panContenedor.Controls.Add(Me.panProductos)
+        Me.panContenedor.Controls.Add(Me.panClientes)
+        Me.panContenedor.Location = New System.Drawing.Point(158, 0)
+        Me.panContenedor.Name = "panContenedor"
+        Me.panContenedor.Size = New System.Drawing.Size(607, 449)
+        Me.panContenedor.TabIndex = 7
         '
         'FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(764, 450)
+        Me.Controls.Add(Me.panContenedor)
         Me.Controls.Add(Me.panMenu)
-        Me.Controls.Add(Me.panClientes)
         Me.Name = "FormClientes"
         Me.Text = "FormClientes"
         Me.panMenu.ResumeLayout(False)
@@ -174,6 +253,10 @@ Partial Class FormClientes
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panClientes.ResumeLayout(False)
         Me.panClientes.PerformLayout()
+        Me.panProductos.ResumeLayout(False)
+        Me.panProductos.PerformLayout()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panContenedor.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -184,10 +267,17 @@ Partial Class FormClientes
     Friend WithEvents btnStock As Button
     Friend WithEvents btnVentas As Button
     Friend WithEvents btnClientes As Button
-    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnEditarE As Button
     Friend WithEvents btnEliminar As Button
     Public WithEvents dgvClientes As DataGridView
     Friend WithEvents btnNuevoCliente As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents panClientes As Panel
+    Friend WithEvents panProductos As Panel
+    Friend WithEvents btnEditarP As Button
+    Friend WithEvents btnEliminarP As Button
+    Public WithEvents dgvProductos As DataGridView
+    Friend WithEvents btnAñadirP As Button
+    Friend WithEvents txtBuscarP As TextBox
+    Friend WithEvents panContenedor As Panel
 End Class

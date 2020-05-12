@@ -2,13 +2,34 @@
 Imports CapaEntidad
 Public Class FormClientes
     Dim objCapaNegocio As New CNClientes
+    Dim objCapaNegocioP As New CNProductos
+
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarClientes()
+        listarProductos()
+        panClientes.Show()
+        panProductos.Hide()
     End Sub
 
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        panClientes.Show()
+        panProductos.Hide()
+    End Sub
+
+    Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
+        panClientes.Hide()
+        panProductos.Show()
+    End Sub
+
+
+    ' LISTENERS DEL PANEL CLIENTES
     Sub listarClientes()
         dgvClientes.DataSource = objCapaNegocio.ObtenerClientes()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        dgvClientes.DataSource = objCapaNegocio.ObtenerClientesFiltro(txtBuscar.Text)
     End Sub
 
     Private Sub btnNuevoCliente_Click(sender As Object, e As EventArgs) Handles btnNuevoCliente.Click
@@ -17,11 +38,7 @@ Public Class FormClientes
         fNuevoCliente.ShowDialog()
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        dgvClientes.DataSource = objCapaNegocio.ObtenerClientesFiltro(txtBuscar.Text)
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditarE.Click
         editarClienteCampos()
     End Sub
 
@@ -66,5 +83,15 @@ Public Class FormClientes
         Else
             MessageBox.Show("Por favor seleccione una fila.")
         End If
+    End Sub
+
+
+    ' LISTENERS DEL PANEL DE PRODUCTOS
+    Sub listarProductos()
+        dgvProductos.DataSource = objCapaNegocioP.ObtenerProductos()
+    End Sub
+
+    Private Sub txtBuscarP_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarP.TextChanged
+
     End Sub
 End Class
