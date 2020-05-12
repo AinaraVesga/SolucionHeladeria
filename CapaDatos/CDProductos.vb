@@ -74,4 +74,27 @@ Public Class CDProductos
         Return ok
     End Function
 
+    ' ACTUALIZAR REGISTRO DE UN PRODUCTO
+    Public Function CmdUpdate(p As CEProducto)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "UPDATE PRODUCTOS 
+                SET NOMBRE = @nombre 
+                WHERE IDPRODUCTO = @id"
+            cmd.Parameters.AddWithValue("@nombre", p.nombre)
+            cmd.Parameters.AddWithValue("@id", p.idproducto)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
 End Class

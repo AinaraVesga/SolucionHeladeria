@@ -112,6 +112,7 @@ Public Class FormMain
             Dim fEditarProducto As New FormEditarProducto(p)
             AddOwnedForm(fEditarProducto)
             fEditarProducto.ShowDialog()
+            listarProductos()
         Else
             MessageBox.Show("Por favor seleccione una fila.")
         End If

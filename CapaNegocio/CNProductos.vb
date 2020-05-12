@@ -48,4 +48,12 @@ Public Class CNProductos
         Dim ok = objCapaDatos.CmdInsert(producto)
         Return ok
     End Function
+
+    ' Funcion para actualizar un producto en la BD
+    Public Function updateProducto(id As String, nombre As String)
+        Dim producto As New CEProducto(id, nombre)
+
+        Dim ok = objCapaDatos.CmdUpdate(producto)
+        Return ok
+    End Function
 End Class
