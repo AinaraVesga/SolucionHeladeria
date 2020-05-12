@@ -125,4 +125,16 @@ Public Class FormMain
     Private Sub dgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellContentClick
         editarProductoCampos()
     End Sub
+
+    Private Sub btnEliminarP_Click(sender As Object, e As EventArgs) Handles btnEliminarP.Click
+        Dim row = dgvProductos.CurrentRow
+        Dim id = row.Cells(0).Value.ToString
+        Dim nombre = row.Cells(1).Value.ToString
+
+        Dim fEliminarProducto As New FormEliminarProducto(id, nombre)
+        AddOwnedForm(fEliminarProducto)
+        fEliminarProducto.ShowDialog()
+        listarProductos()
+
+    End Sub
 End Class

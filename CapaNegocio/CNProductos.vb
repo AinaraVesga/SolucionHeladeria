@@ -56,4 +56,10 @@ Public Class CNProductos
         Dim ok = objCapaDatos.CmdUpdate(producto)
         Return ok
     End Function
+
+    ' Funcion para eliminar un producto
+    Public Function deleteProducto(id As String)
+        Dim ok = objCapaDatos.CmdDelete(id)
+        Return ok
+    End Function
 End Class

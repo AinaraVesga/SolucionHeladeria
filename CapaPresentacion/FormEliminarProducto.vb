@@ -1,8 +1,9 @@
-﻿Imports CapaNegocio
+﻿Imports CapaEntidad
+Imports CapaNegocio
 
-Public Class FormEliminarCliente
+Public Class FormEliminarProducto
 
-    Dim objNClientes As New CNClientes
+    Dim objProducto As New CNProductos
 
     Public Sub New(id As String, nombre As String)
 
@@ -16,9 +17,8 @@ Public Class FormEliminarCliente
     End Sub
 
     Private Sub btnSi_Click(sender As Object, e As EventArgs) Handles btnSi.Click
-
         Dim id As String = txtID.Text
-        Dim ok = objNClientes.deleteCliente(id)
+        Dim ok = objProducto.deleteProducto(id)
 
         If ok Then
             MessageBox.Show("Se ha eliminado correctamente.")
@@ -26,14 +26,10 @@ Public Class FormEliminarCliente
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
-        Dim fClientes As FormMain = CType(Owner, FormMain)
-        fClientes.listarClientes()
         Close()
-
     End Sub
 
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
         Close()
     End Sub
-
 End Class
