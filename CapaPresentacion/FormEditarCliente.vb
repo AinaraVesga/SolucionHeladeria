@@ -73,7 +73,7 @@ Public Class FormEditarCliente
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
-        Dim fClientes As FormClientes = CType(Owner, FormClientes)
+        Dim fClientes As FormMain = CType(Owner, FormMain)
         fClientes.listarClientes()
         Close()
     End Sub

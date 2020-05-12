@@ -1,6 +1,6 @@
 ﻿Imports CapaNegocio
 Imports CapaEntidad
-Public Class FormClientes
+Public Class FormMain
     Dim objCapaNegocio As New CNClientes
     Dim objCapaNegocioP As New CNProductos
 
@@ -93,5 +93,35 @@ Public Class FormClientes
 
     Private Sub txtBuscarP_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarP.TextChanged
         dgvProductos.DataSource = objCapaNegocioP.ObtenerProductosFiltro(txtBuscarP.Text)
+    End Sub
+
+    Private Sub btnAñadirP_Click(sender As Object, e As EventArgs) Handles btnAñadirP.Click
+        Dim fNuevoProducto As New FormNuevoProducto
+        AddOwnedForm(fNuevoProducto)
+        fNuevoProducto.ShowDialog()
+        listarProductos()
+    End Sub
+
+    Public Sub editarProductoCampos()
+        If dgvProductos.SelectedRows.Count = 0 Then
+            Dim row = dgvProductos.CurrentRow
+            Dim id = row.Cells(0).Value.ToString
+            Dim nombre = row.Cells(1).Value.ToString
+
+            Dim p As New CEProducto(id, nombre)
+            Dim fEditarProducto As New FormEditarProducto(p)
+            AddOwnedForm(fEditarProducto)
+            fEditarProducto.ShowDialog()
+        Else
+            MessageBox.Show("Por favor seleccione una fila.")
+        End If
+    End Sub
+
+    Private Sub btnEditarP_Click(sender As Object, e As EventArgs) Handles btnEditarP.Click
+        editarProductoCampos()
+    End Sub
+
+    Private Sub dgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellContentClick
+        editarProductoCampos()
     End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormClientes
+Partial Class FormMain
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -239,14 +239,14 @@ Partial Class FormClientes
         Me.panContenedor.Size = New System.Drawing.Size(607, 449)
         Me.panContenedor.TabIndex = 7
         '
-        'FormClientes
+        'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(764, 450)
         Me.Controls.Add(Me.panContenedor)
         Me.Controls.Add(Me.panMenu)
-        Me.Name = "FormClientes"
+        Me.Name = "FormMain"
         Me.Text = "FormClientes"
         Me.panMenu.ResumeLayout(False)
         Me.panMenu.PerformLayout()
