@@ -92,6 +92,6 @@ Public Class FormClientes
     End Sub
 
     Private Sub txtBuscarP_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarP.TextChanged
-
+        dgvProductos.DataSource = objCapaNegocioP.ObtenerProductosFiltro(txtBuscarP.Text)
     End Sub
 End Class

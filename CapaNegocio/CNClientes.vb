@@ -10,7 +10,7 @@ Public Class CNClientes
         Return objCapaDatos.QryListarClientes()
     End Function
 
-    ' Funcion que devuelve la lista de clientes segun parametro de entradaç
+    ' Funcion que devuelve la lista de clientes segun parametro de entrada
     Public Function ObtenerClientesFiltro(filtro As String) As DataTable
         Return objCapaDatos.QryListarClientesFiltro(filtro)
     End Function

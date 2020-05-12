@@ -19,4 +19,19 @@ Public Class CDProductos
         Return table
     End Function
 
+    'Listar productos segun un parámetro de entrada
+    Function QryListarProductosFiltro(filtro As String) As DataTable
+        Dim query = "SELECT * FROM PRODUCTOS WHERE NOMBRE LIKE @nombre"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@nombre", filtro + "%")
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader()
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
 End Class
