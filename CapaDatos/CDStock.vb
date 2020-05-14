@@ -51,4 +51,18 @@ Public Class CDStock
         Return table
     End Function
 
+    'Listar envases
+    Function QryListarEnvases() As DataTable
+        Dim query = "SELECT * FROM ENVASES"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
 End Class

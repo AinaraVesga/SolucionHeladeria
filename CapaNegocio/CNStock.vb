@@ -39,5 +39,10 @@ Public Class CNStock
         Return nlote
     End Function
 
+    ' Funcion que devuelve la lista de envases
+    Public Function listarEnvases() As DataTable
+        Return objStock.QryListarEnvases
+    End Function
+
 
 End Class
