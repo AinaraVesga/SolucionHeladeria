@@ -93,14 +93,14 @@ Partial Class FormNuevoCliente
         Me.txtNombre.Location = New System.Drawing.Point(35, 151)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(336, 20)
-        Me.txtNombre.TabIndex = 4
+        Me.txtNombre.TabIndex = 1
         '
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(35, 268)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(336, 20)
-        Me.txtDireccion.TabIndex = 6
+        Me.txtDireccion.TabIndex = 5
         '
         'lblDireccion
         '
@@ -116,7 +116,7 @@ Partial Class FormNuevoCliente
         Me.txtPoblacion.Location = New System.Drawing.Point(401, 268)
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(336, 20)
-        Me.txtPoblacion.TabIndex = 8
+        Me.txtPoblacion.TabIndex = 6
         '
         'lblPoblacion
         '
@@ -132,7 +132,7 @@ Partial Class FormNuevoCliente
         Me.txtCIF.Location = New System.Drawing.Point(401, 151)
         Me.txtCIF.Name = "txtCIF"
         Me.txtCIF.Size = New System.Drawing.Size(336, 20)
-        Me.txtCIF.TabIndex = 10
+        Me.txtCIF.TabIndex = 2
         '
         'lblCIF
         '
@@ -148,7 +148,7 @@ Partial Class FormNuevoCliente
         Me.txtEmail.Location = New System.Drawing.Point(34, 207)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(336, 20)
-        Me.txtEmail.TabIndex = 12
+        Me.txtEmail.TabIndex = 3
         '
         'lblEmail
         '
@@ -164,7 +164,7 @@ Partial Class FormNuevoCliente
         Me.txtTelefono.Location = New System.Drawing.Point(401, 207)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(336, 20)
-        Me.txtTelefono.TabIndex = 14
+        Me.txtTelefono.TabIndex = 4
         '
         'lblTelefono
         '
@@ -180,7 +180,7 @@ Partial Class FormNuevoCliente
         Me.txtCuenta.Location = New System.Drawing.Point(35, 329)
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(336, 20)
-        Me.txtCuenta.TabIndex = 16
+        Me.txtCuenta.TabIndex = 7
         '
         'lblCuenta
         '
@@ -197,7 +197,7 @@ Partial Class FormNuevoCliente
         Me.cbRecargo.Location = New System.Drawing.Point(34, 375)
         Me.cbRecargo.Name = "cbRecargo"
         Me.cbRecargo.Size = New System.Drawing.Size(146, 17)
-        Me.cbRecargo.TabIndex = 18
+        Me.cbRecargo.TabIndex = 10
         Me.cbRecargo.Text = "Recargo de Equivalencia"
         Me.cbRecargo.UseVisualStyleBackColor = True
         '
@@ -208,7 +208,7 @@ Partial Class FormNuevoCliente
         Me.cboFacturacion.Location = New System.Drawing.Point(401, 329)
         Me.cboFacturacion.Name = "cboFacturacion"
         Me.cboFacturacion.Size = New System.Drawing.Size(258, 21)
-        Me.cboFacturacion.TabIndex = 19
+        Me.cboFacturacion.TabIndex = 8
         '
         'lblFacturacion
         '
@@ -224,7 +224,7 @@ Partial Class FormNuevoCliente
         Me.btnAceptar.Location = New System.Drawing.Point(348, 420)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 21
+        Me.btnAceptar.TabIndex = 11
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
@@ -233,7 +233,7 @@ Partial Class FormNuevoCliente
         Me.btnAñadir.Location = New System.Drawing.Point(665, 327)
         Me.btnAñadir.Name = "btnAñadir"
         Me.btnAñadir.Size = New System.Drawing.Size(72, 23)
-        Me.btnAñadir.TabIndex = 22
+        Me.btnAñadir.TabIndex = 9
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = True
         '
@@ -250,28 +250,28 @@ Partial Class FormNuevoCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 485)
+        Me.Controls.Add(Me.panTitulo)
+        Me.Controls.Add(Me.lblIdent)
         Me.Controls.Add(Me.txtID)
-        Me.Controls.Add(Me.btnAñadir)
-        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.lblNombre)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.lblCIF)
+        Me.Controls.Add(Me.txtCIF)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.lblTelefono)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.lblDireccion)
+        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.lblPoblacion)
+        Me.Controls.Add(Me.txtPoblacion)
+        Me.Controls.Add(Me.lblCuenta)
+        Me.Controls.Add(Me.txtCuenta)
         Me.Controls.Add(Me.lblFacturacion)
         Me.Controls.Add(Me.cboFacturacion)
+        Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.cbRecargo)
-        Me.Controls.Add(Me.txtCuenta)
-        Me.Controls.Add(Me.lblCuenta)
-        Me.Controls.Add(Me.txtTelefono)
-        Me.Controls.Add(Me.lblTelefono)
-        Me.Controls.Add(Me.txtEmail)
-        Me.Controls.Add(Me.lblEmail)
-        Me.Controls.Add(Me.txtCIF)
-        Me.Controls.Add(Me.lblCIF)
-        Me.Controls.Add(Me.txtPoblacion)
-        Me.Controls.Add(Me.lblPoblacion)
-        Me.Controls.Add(Me.txtDireccion)
-        Me.Controls.Add(Me.lblDireccion)
-        Me.Controls.Add(Me.txtNombre)
-        Me.Controls.Add(Me.lblNombre)
-        Me.Controls.Add(Me.lblIdent)
-        Me.Controls.Add(Me.panTitulo)
+        Me.Controls.Add(Me.btnAceptar)
         Me.Name = "FormNuevoCliente"
         Me.Text = "Nuevo Cliente"
         Me.panTitulo.ResumeLayout(False)

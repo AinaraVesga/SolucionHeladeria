@@ -41,12 +41,20 @@ Partial Class FormMain
         Me.btnAñadirP = New System.Windows.Forms.Button()
         Me.txtBuscarP = New System.Windows.Forms.TextBox()
         Me.panContenedor = New System.Windows.Forms.Panel()
+        Me.panStock = New System.Windows.Forms.Panel()
+        Me.btnEditarS = New System.Windows.Forms.Button()
+        Me.btnEliminarS = New System.Windows.Forms.Button()
+        Me.dgvStock = New System.Windows.Forms.DataGridView()
+        Me.btnNuevoS = New System.Windows.Forms.Button()
+        Me.txtBuscarS = New System.Windows.Forms.TextBox()
         Me.panMenu.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panClientes.SuspendLayout()
         Me.panProductos.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panContenedor.SuspendLayout()
+        Me.panStock.SuspendLayout()
+        CType(Me.dgvStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panMenu
@@ -232,6 +240,7 @@ Partial Class FormMain
         '
         'panContenedor
         '
+        Me.panContenedor.Controls.Add(Me.panStock)
         Me.panContenedor.Controls.Add(Me.panProductos)
         Me.panContenedor.Controls.Add(Me.panClientes)
         Me.panContenedor.Location = New System.Drawing.Point(158, 0)
@@ -239,13 +248,73 @@ Partial Class FormMain
         Me.panContenedor.Size = New System.Drawing.Size(607, 449)
         Me.panContenedor.TabIndex = 7
         '
+        'panStock
+        '
+        Me.panStock.Controls.Add(Me.btnEditarS)
+        Me.panStock.Controls.Add(Me.btnEliminarS)
+        Me.panStock.Controls.Add(Me.dgvStock)
+        Me.panStock.Controls.Add(Me.btnNuevoS)
+        Me.panStock.Controls.Add(Me.txtBuscarS)
+        Me.panStock.Location = New System.Drawing.Point(0, 3)
+        Me.panStock.Name = "panStock"
+        Me.panStock.Size = New System.Drawing.Size(605, 447)
+        Me.panStock.TabIndex = 7
+        '
+        'btnEditarS
+        '
+        Me.btnEditarS.Location = New System.Drawing.Point(478, 51)
+        Me.btnEditarS.Name = "btnEditarS"
+        Me.btnEditarS.Size = New System.Drawing.Size(97, 23)
+        Me.btnEditarS.TabIndex = 5
+        Me.btnEditarS.Text = "Editar"
+        Me.btnEditarS.UseVisualStyleBackColor = True
+        '
+        'btnEliminarS
+        '
+        Me.btnEliminarS.Location = New System.Drawing.Point(375, 51)
+        Me.btnEliminarS.Name = "btnEliminarS"
+        Me.btnEliminarS.Size = New System.Drawing.Size(97, 23)
+        Me.btnEliminarS.TabIndex = 4
+        Me.btnEliminarS.Text = "Eliminar"
+        Me.btnEliminarS.UseVisualStyleBackColor = True
+        '
+        'dgvStock
+        '
+        Me.dgvStock.AllowUserToAddRows = False
+        Me.dgvStock.AllowUserToDeleteRows = False
+        Me.dgvStock.AllowUserToResizeColumns = False
+        Me.dgvStock.AllowUserToResizeRows = False
+        Me.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvStock.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvStock.Location = New System.Drawing.Point(37, 80)
+        Me.dgvStock.MultiSelect = False
+        Me.dgvStock.Name = "dgvStock"
+        Me.dgvStock.Size = New System.Drawing.Size(538, 358)
+        Me.dgvStock.TabIndex = 3
+        '
+        'btnNuevoS
+        '
+        Me.btnNuevoS.Location = New System.Drawing.Point(478, 17)
+        Me.btnNuevoS.Name = "btnNuevoS"
+        Me.btnNuevoS.Size = New System.Drawing.Size(97, 23)
+        Me.btnNuevoS.TabIndex = 2
+        Me.btnNuevoS.Text = "Añadir a Stock"
+        Me.btnNuevoS.UseVisualStyleBackColor = True
+        '
+        'txtBuscarS
+        '
+        Me.txtBuscarS.Location = New System.Drawing.Point(37, 53)
+        Me.txtBuscarS.Name = "txtBuscarS"
+        Me.txtBuscarS.Size = New System.Drawing.Size(225, 20)
+        Me.txtBuscarS.TabIndex = 1
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(764, 450)
-        Me.Controls.Add(Me.panContenedor)
         Me.Controls.Add(Me.panMenu)
+        Me.Controls.Add(Me.panContenedor)
         Me.Name = "FormMain"
         Me.Text = "FormClientes"
         Me.panMenu.ResumeLayout(False)
@@ -257,6 +326,9 @@ Partial Class FormMain
         Me.panProductos.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panContenedor.ResumeLayout(False)
+        Me.panStock.ResumeLayout(False)
+        Me.panStock.PerformLayout()
+        CType(Me.dgvStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -280,4 +352,10 @@ Partial Class FormMain
     Friend WithEvents btnAñadirP As Button
     Friend WithEvents txtBuscarP As TextBox
     Friend WithEvents panContenedor As Panel
+    Friend WithEvents panStock As Panel
+    Friend WithEvents btnEditarS As Button
+    Friend WithEvents btnEliminarS As Button
+    Public WithEvents dgvStock As DataGridView
+    Friend WithEvents btnNuevoS As Button
+    Friend WithEvents txtBuscarS As TextBox
 End Class

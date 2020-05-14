@@ -10,16 +10,30 @@ Public Class FormMain
         listarProductos()
         panClientes.Show()
         panProductos.Hide()
+        panStock.Hide()
+
     End Sub
 
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         panClientes.Show()
         panProductos.Hide()
+        panStock.Hide()
     End Sub
 
     Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
         panClientes.Hide()
         panProductos.Show()
+        panStock.Hide()
+    End Sub
+
+    Private Sub btnStock_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnStock_Click_1(sender As Object, e As EventArgs) Handles btnStock.Click
+        panClientes.Hide()
+        panProductos.Hide()
+        panStock.Show()
     End Sub
 
 
@@ -137,4 +151,6 @@ Public Class FormMain
         listarProductos()
 
     End Sub
+
+
 End Class
