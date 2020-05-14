@@ -88,6 +88,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAñadirStock.Designer.vb">
+      <DependentUpon>FormAñadirStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAñadirStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditarProducto.Designer.vb">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormAñadirStock.resx">
+      <DependentUpon>FormAñadirStock.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditarProducto.resx">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </EmbeddedResource>

@@ -161,4 +161,13 @@ Public Class FormMain
     Private Sub txtBuscarS_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarS.TextChanged
         dgvStock.DataSource = objCapaNegocioS.ObtenerStockFiltro(txtBuscarS.Text)
     End Sub
+
+    Private Sub btnNuevoS_Click(sender As Object, e As EventArgs) Handles btnNuevoS.Click
+        Dim fAnadirStock As New FormAñadirStock
+        AddOwnedForm(fAnadirStock)
+        fAnadirStock.ShowDialog()
+        listarStock()
+
+    End Sub
+
 End Class
