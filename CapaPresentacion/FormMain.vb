@@ -3,11 +3,12 @@ Imports CapaEntidad
 Public Class FormMain
     Dim objCapaNegocio As New CNClientes
     Dim objCapaNegocioP As New CNProductos
-
+    Dim objCapaNegocioS As New CNStock
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarClientes()
         listarProductos()
+        listarStock()
         panClientes.Show()
         panProductos.Hide()
         panStock.Hide()
@@ -152,5 +153,12 @@ Public Class FormMain
 
     End Sub
 
+    ' LISTENERS DEL PANEL DE STOCK
+    Sub listarStock()
+        dgvStock.DataSource = objCapaNegocioS.ObtenerStock()
+    End Sub
 
+    Private Sub txtBuscarS_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarS.TextChanged
+        dgvStock.DataSource = objCapaNegocioS.ObtenerStockFiltro(txtBuscarS.Text)
+    End Sub
 End Class
