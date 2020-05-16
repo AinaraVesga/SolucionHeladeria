@@ -92,5 +92,8 @@ Public Class FormAñadirStock
 
     End Sub
 
-
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        objStock.insertarStock()
+        Close()
+    End Sub
 End Class

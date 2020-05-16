@@ -7,7 +7,7 @@ Public Class CDStock
 
     ' Listar todos los productos en stock
     Function QryListarStock() As DataTable
-        Dim query = "SELECT * FROM PRODSTOCK"
+        Dim query = "SELECT * FROM PRODSTOCK ORDER BY NLOTE"
         Dim conn = conexion.getConnection()
         conn.Open()
         Dim sqlCommand = New OleDbCommand(query, conn)
@@ -135,5 +135,72 @@ Public Class CDStock
         End Try
         Return ok
     End Function
+
+    ' Obtener el registro de la tabla de insertar
+    Function QryUnidadesTablaIntermedia(idenvase As String) As DataTable
+        Dim query = "SELECT UNIDADES FROM INSERTAR WHERE IDENVASE = @idenvase"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idenvase", idenvase)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' Cambiar las unidades de una linea de la tabla temporal
+    Public Function CmdUpdateTablaIntermedia(idenvase As String, unidades As Integer)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "UPDATE INSERTAR 
+                SET UNIDADES = @unidades 
+                WHERE IDENVASE = @id"
+            cmd.Parameters.AddWithValue("@unidades", unidades)
+            cmd.Parameters.AddWithValue("@id", idenvase)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
+    ' intertar filas de la tabla intermedia en prodstock
+    Public Sub QryInsertarStock()
+        Dim query = "INSERT INTO PRODSTOCK SELECT INSERTAR.* FROM INSERTAR;"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.ExecuteReader()
+        'Dim table = New DataTable()
+        ' Dim executeReader = sqlCommand.ExecuteReader
+        'table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+    End Sub
+
+    ' eliminar la tabla insertar
+    Public Sub QryEliminarTablaIntermedia()
+        Dim query = "DROP TABLE INSERTAR;"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.ExecuteReader()
+        'Dim table = New DataTable()
+        ' Dim executeReader = sqlCommand.ExecuteReader
+        'table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+    End Sub
+
 
 End Class
