@@ -65,4 +65,75 @@ Public Class CDStock
         Return table
     End Function
 
+    ' Obtener el precio de un envase
+    Function QryPrecioEnvase(idenvase As String) As DataTable
+        Dim query = "SELECT PRECIOENVASE FROM ENVASES WHERE IDENVASE = @idenvase"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idenvase", idenvase)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' Crear una tabla intermedia para meter los stocks nuevos provisionales
+    Sub QryCrearTablaIntermedia()
+        Dim query = "SELECT * INTO INSERTAR FROM PRODSTOCK WHERE 0=1;"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.ExecuteReader()
+        'Dim table = New DataTable()
+        ' Dim executeReader = sqlCommand.ExecuteReader
+        'table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+    End Sub
+
+    ' Listar las lineas de la tabla intermedia de stock
+    Function QryListarTablaIntermedia() As DataTable
+        Dim query = "SELECT * FROM INSERTAR"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' Insertar lineas en la tabla intermedia
+    Function QryInsertarTablaIntermedia(s As CEStock)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "INSERT INTO INSERTAR 
+                 (IDPRODUCTO, IDENVASE, NLOTE, NUMERO, CONSUMOPREF, UNIDADES, PRECIOENVASE) VALUES 
+                 (@idproducto, @idenvase, @nlote, @numero, @consumopref, @unidades, @precio)"
+            cmd.Parameters.AddWithValue("@idproducto", s.idproducto)
+            cmd.Parameters.AddWithValue("@idenvase", s.idenvase)
+            cmd.Parameters.AddWithValue("@nlote", s.nlote)
+            cmd.Parameters.AddWithValue("@numero", s.numero)
+            cmd.Parameters.AddWithValue("@consumopref", s.consumop)
+            cmd.Parameters.AddWithValue("@unidades", s.unidades)
+            cmd.Parameters.AddWithValue("@precio", s.precio)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
 End Class

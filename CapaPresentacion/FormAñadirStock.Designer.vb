@@ -33,7 +33,13 @@ Partial Class FormAñadirStock
         Me.cbxProducto = New System.Windows.Forms.ComboBox()
         Me.lblProducto = New System.Windows.Forms.Label()
         Me.panBody2 = New System.Windows.Forms.Panel()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.lblPrecio = New System.Windows.Forms.Label()
+        Me.txtID2 = New System.Windows.Forms.TextBox()
+        Me.lblID2 = New System.Windows.Forms.Label()
+        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.dgvNuevoStock = New System.Windows.Forms.DataGridView()
+        Me.btnAñadir2 = New System.Windows.Forms.Button()
+        Me.numUnidades = New System.Windows.Forms.NumericUpDown()
         Me.lblUnidades = New System.Windows.Forms.Label()
         Me.cbxEnvase = New System.Windows.Forms.ComboBox()
         Me.lblEnvase = New System.Windows.Forms.Label()
@@ -41,16 +47,12 @@ Partial Class FormAñadirStock
         Me.lblLote2 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.lblProducto2 = New System.Windows.Forms.Label()
-        Me.btnAñadir2 = New System.Windows.Forms.Button()
-        Me.dgvNuevoStock = New System.Windows.Forms.DataGridView()
-        Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.lblID2 = New System.Windows.Forms.Label()
-        Me.txtID2 = New System.Windows.Forms.TextBox()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.panTitulo.SuspendLayout()
         Me.panBody1.SuspendLayout()
         Me.panBody2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvNuevoStock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numUnidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panTitulo
@@ -150,12 +152,14 @@ Partial Class FormAñadirStock
         '
         'panBody2
         '
+        Me.panBody2.Controls.Add(Me.txtPrecio)
+        Me.panBody2.Controls.Add(Me.lblPrecio)
         Me.panBody2.Controls.Add(Me.txtID2)
         Me.panBody2.Controls.Add(Me.lblID2)
         Me.panBody2.Controls.Add(Me.btnAceptar)
         Me.panBody2.Controls.Add(Me.dgvNuevoStock)
         Me.panBody2.Controls.Add(Me.btnAñadir2)
-        Me.panBody2.Controls.Add(Me.NumericUpDown1)
+        Me.panBody2.Controls.Add(Me.numUnidades)
         Me.panBody2.Controls.Add(Me.lblUnidades)
         Me.panBody2.Controls.Add(Me.cbxEnvase)
         Me.panBody2.Controls.Add(Me.lblEnvase)
@@ -165,17 +169,69 @@ Partial Class FormAñadirStock
         Me.panBody2.Controls.Add(Me.lblProducto2)
         Me.panBody2.Location = New System.Drawing.Point(0, 63)
         Me.panBody2.Name = "panBody2"
-        Me.panBody2.Size = New System.Drawing.Size(792, 385)
+        Me.panBody2.Size = New System.Drawing.Size(1200, 385)
         Me.panBody2.TabIndex = 2
         '
-        'NumericUpDown1
+        'lblPrecio
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(196, 209)
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
-        Me.NumericUpDown1.TabIndex = 7
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.Location = New System.Drawing.Point(223, 148)
+        Me.lblPrecio.Name = "lblPrecio"
+        Me.lblPrecio.Size = New System.Drawing.Size(40, 13)
+        Me.lblPrecio.TabIndex = 13
+        Me.lblPrecio.Text = "Precio:"
+        '
+        'txtID2
+        '
+        Me.txtID2.Enabled = False
+        Me.txtID2.Location = New System.Drawing.Point(254, 45)
+        Me.txtID2.Name = "txtID2"
+        Me.txtID2.Size = New System.Drawing.Size(62, 20)
+        Me.txtID2.TabIndex = 12
+        '
+        'lblID2
+        '
+        Me.lblID2.AutoSize = True
+        Me.lblID2.Location = New System.Drawing.Point(251, 29)
+        Me.lblID2.Name = "lblID2"
+        Me.lblID2.Size = New System.Drawing.Size(21, 13)
+        Me.lblID2.TabIndex = 11
+        Me.lblID2.Text = "ID:"
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.Location = New System.Drawing.Point(355, 345)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAceptar.TabIndex = 10
+        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.UseVisualStyleBackColor = True
+        '
+        'dgvNuevoStock
+        '
+        Me.dgvNuevoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvNuevoStock.Location = New System.Drawing.Point(379, 19)
+        Me.dgvNuevoStock.Name = "dgvNuevoStock"
+        Me.dgvNuevoStock.Size = New System.Drawing.Size(750, 261)
+        Me.dgvNuevoStock.TabIndex = 9
+        '
+        'btnAñadir2
+        '
+        Me.btnAñadir2.Location = New System.Drawing.Point(134, 258)
+        Me.btnAñadir2.Name = "btnAñadir2"
+        Me.btnAñadir2.Size = New System.Drawing.Size(75, 23)
+        Me.btnAñadir2.TabIndex = 8
+        Me.btnAñadir2.Text = "Añadir"
+        Me.btnAñadir2.UseVisualStyleBackColor = True
+        '
+        'numUnidades
+        '
+        Me.numUnidades.Location = New System.Drawing.Point(196, 209)
+        Me.numUnidades.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numUnidades.Name = "numUnidades"
+        Me.numUnidades.Size = New System.Drawing.Size(120, 20)
+        Me.numUnidades.TabIndex = 7
+        Me.numUnidades.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'lblUnidades
         '
@@ -191,7 +247,7 @@ Partial Class FormAñadirStock
         Me.cbxEnvase.FormattingEnabled = True
         Me.cbxEnvase.Location = New System.Drawing.Point(52, 164)
         Me.cbxEnvase.Name = "cbxEnvase"
-        Me.cbxEnvase.Size = New System.Drawing.Size(264, 21)
+        Me.cbxEnvase.Size = New System.Drawing.Size(157, 21)
         Me.cbxEnvase.TabIndex = 5
         '
         'lblEnvase
@@ -237,48 +293,12 @@ Partial Class FormAñadirStock
         Me.lblProducto2.TabIndex = 0
         Me.lblProducto2.Text = "Producto:"
         '
-        'btnAñadir2
+        'txtPrecio
         '
-        Me.btnAñadir2.Location = New System.Drawing.Point(134, 258)
-        Me.btnAñadir2.Name = "btnAñadir2"
-        Me.btnAñadir2.Size = New System.Drawing.Size(75, 23)
-        Me.btnAñadir2.TabIndex = 8
-        Me.btnAñadir2.Text = "Añadir"
-        Me.btnAñadir2.UseVisualStyleBackColor = True
-        '
-        'dgvNuevoStock
-        '
-        Me.dgvNuevoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvNuevoStock.Location = New System.Drawing.Point(379, 19)
-        Me.dgvNuevoStock.Name = "dgvNuevoStock"
-        Me.dgvNuevoStock.Size = New System.Drawing.Size(383, 261)
-        Me.dgvNuevoStock.TabIndex = 9
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.Location = New System.Drawing.Point(355, 345)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 10
-        Me.btnAceptar.Text = "Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
-        '
-        'lblID2
-        '
-        Me.lblID2.AutoSize = True
-        Me.lblID2.Location = New System.Drawing.Point(251, 29)
-        Me.lblID2.Name = "lblID2"
-        Me.lblID2.Size = New System.Drawing.Size(21, 13)
-        Me.lblID2.TabIndex = 11
-        Me.lblID2.Text = "ID:"
-        '
-        'txtID2
-        '
-        Me.txtID2.Enabled = False
-        Me.txtID2.Location = New System.Drawing.Point(254, 45)
-        Me.txtID2.Name = "txtID2"
-        Me.txtID2.Size = New System.Drawing.Size(62, 20)
-        Me.txtID2.TabIndex = 12
+        Me.txtPrecio.Location = New System.Drawing.Point(226, 164)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(90, 20)
+        Me.txtPrecio.TabIndex = 14
         '
         'FormAñadirStock
         '
@@ -296,8 +316,8 @@ Partial Class FormAñadirStock
         Me.panBody1.PerformLayout()
         Me.panBody2.ResumeLayout(False)
         Me.panBody2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvNuevoStock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numUnidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -313,7 +333,7 @@ Partial Class FormAñadirStock
     Friend WithEvents lblID As Label
     Friend WithEvents txtID As TextBox
     Friend WithEvents panBody2 As Panel
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents numUnidades As NumericUpDown
     Friend WithEvents lblUnidades As Label
     Friend WithEvents cbxEnvase As ComboBox
     Friend WithEvents lblEnvase As Label
@@ -326,4 +346,6 @@ Partial Class FormAñadirStock
     Friend WithEvents btnAñadir2 As Button
     Friend WithEvents txtID2 As TextBox
     Friend WithEvents lblID2 As Label
+    Friend WithEvents lblPrecio As Label
+    Friend WithEvents txtPrecio As TextBox
 End Class
