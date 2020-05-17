@@ -114,5 +114,11 @@ Public Class CNStock
         Return ok
     End Function
 
+    ' funcion para eliminar una línea del stock
+    Public Function deleteStock(idproducto As String, idenvase As String, nlote As String)
+        Dim ok = objStock.CmdDeleteStock(idproducto, idenvase, nlote)
+        Return ok
+    End Function
+
 
 End Class

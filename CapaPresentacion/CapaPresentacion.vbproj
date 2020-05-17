@@ -112,6 +112,12 @@
     <Compile Include="FormEliminarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEliminarStock.Designer.vb">
+      <DependentUpon>FormEliminarStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEliminarStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.Designer.vb">
       <DependentUpon>FormMain.vb</DependentUpon>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEliminarProducto.resx">
       <DependentUpon>FormEliminarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEliminarStock.resx">
+      <DependentUpon>FormEliminarStock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>

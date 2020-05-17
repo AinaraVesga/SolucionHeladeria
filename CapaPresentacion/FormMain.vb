@@ -208,6 +208,10 @@ Public Class FormMain
             Dim idenvase = row.Cells(1).Value.ToString
             Dim nlote = row.Cells(2).Value.ToString
 
+            Dim fEliminarStock As New FormEliminarStock(idproducto, idenvase, nlote)
+            AddOwnedForm(fEliminarStock)
+            fEliminarStock.ShowDialog()
+            listarStock()
 
         Else
             MessageBox.Show("Por favor seleccione una fila.")
