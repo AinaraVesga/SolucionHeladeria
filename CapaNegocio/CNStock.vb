@@ -92,8 +92,27 @@ Public Class CNStock
     Public Sub insertarStock()
         objStock.QryInsertarStock()
         objStock.QryEliminarTablaIntermedia()
-
     End Sub
+
+    ' Función para obtener el nombre del producto
+    Public Function nombreProducto(idproducto As String)
+        Dim dt = objStock.QryNombreProducto(idproducto)
+        Dim nombre As String = dt.Rows(0)("NOMBRE")
+        Return nombre
+    End Function
+
+    ' Función para obtener la capacidad de un envase
+    Public Function capacidadEnvase(idenvase As String)
+        Dim dt = objStock.QryCapacidadEnvase(idenvase)
+        Dim capacidad As Double = dt.Rows(0)("CAPACIDAD")
+        Return capacidad
+    End Function
+
+    ' función para actualizar las unidades de un stock
+    Public Function updateStock(idproducto As String, idenvase As String, nlote As String, unidades As Integer)
+        Dim ok = objStock.CmdUpdateStock(idproducto, idenvase, nlote, unidades)
+        Return ok
+    End Function
 
 
 End Class

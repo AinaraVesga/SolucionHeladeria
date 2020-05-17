@@ -202,5 +202,81 @@ Public Class CDStock
         conn.Close()
     End Sub
 
+    ' obtener el nombre de producto a partir de su idproducto
+    Function QryNombreProducto(idproducto As String) As DataTable
+        Dim query = "SELECT NOMBRE FROM PRODUCTOS WHERE IDPRODUCTO = @idproducto"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idproducto", idproducto)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' obtener capacidad del envase a partir de su idenvase
+    Function QryCapacidadEnvase(idenvase As String) As DataTable
+        Dim query = "SELECT CAPACIDAD FROM ENVASES WHERE IDENVASE = @idenvase"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idenvase", idenvase)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' actualizar las unidades de stock
+    Public Function CmdUpdateStock(idproducto As String, idenvase As String, nlote As String, unidades As Integer)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "UPDATE PRODSTOCK 
+                SET UNIDADES = @unidades 
+                WHERE IDPRODUCTO = @idproducto AND IDENVASE = @idenvase AND NLOTE = @nlote"
+            cmd.Parameters.AddWithValue("@unidades", unidades)
+            cmd.Parameters.AddWithValue("@idproducto", idproducto)
+            cmd.Parameters.AddWithValue("@idenvase", idenvase)
+            cmd.Parameters.AddWithValue("@nlote", nlote)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
+    ' eliminar linea de stock
+    Public Function CmdDeleteStock(idproducto As String, idenvase As String, nlote As String)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "DELETE FROM PRODSTOCK WHERE IDPRODUCTO = @idproducto AND IDENVASE = @idenvase AND NLOTE = @nlote"
+            cmd.Parameters.AddWithValue("@idproducto", idproducto)
+            cmd.Parameters.AddWithValue("@idenvase", idenvase)
+            cmd.Parameters.AddWithValue("@nlote", nlote)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
 
 End Class

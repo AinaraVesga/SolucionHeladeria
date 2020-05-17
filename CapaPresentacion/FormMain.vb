@@ -170,4 +170,49 @@ Public Class FormMain
 
     End Sub
 
+    Public Sub editarStockUnidades()
+        If dgvProductos.SelectedRows.Count = 0 Then
+            Dim row = dgvStock.CurrentRow
+            Dim idproducto = row.Cells(0).Value.ToString
+            Dim idenvase = row.Cells(1).Value.ToString
+            Dim nlote = row.Cells(2).Value.ToString
+            Dim num As Integer = row.Cells(3).Value.ToString
+            Dim consumo = row.Cells(4).Value.ToString
+            Dim unidades = row.Cells(5).Value.ToString
+            Dim precio As Double = row.Cells(6).Value.ToString
+
+            Dim s As New CEStock(idproducto, idenvase, nlote, num, consumo, unidades, precio)
+
+            Dim fEditarStock As New FormEditarStock(s)
+            AddOwnedForm(fEditarStock)
+            fEditarStock.ShowDialog()
+            listarStock()
+
+        Else
+            MessageBox.Show("Por favor seleccione una fila.")
+        End If
+    End Sub
+
+    Private Sub btnEditarS_Click(sender As Object, e As EventArgs) Handles btnEditarS.Click
+        editarStockUnidades()
+    End Sub
+
+    Private Sub dgvStock_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStock.CellContentClick
+        editarStockUnidades()
+    End Sub
+
+    Private Sub btnEliminarS_Click(sender As Object, e As EventArgs) Handles btnEliminarS.Click
+        If dgvProductos.SelectedRows.Count = 0 Then
+            Dim row = dgvStock.CurrentRow
+            Dim idproducto = row.Cells(0).Value.ToString
+            Dim idenvase = row.Cells(1).Value.ToString
+            Dim nlote = row.Cells(2).Value.ToString
+
+
+        Else
+            MessageBox.Show("Por favor seleccione una fila.")
+        End If
+
+
+    End Sub
 End Class
