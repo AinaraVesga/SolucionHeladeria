@@ -88,6 +88,12 @@ Public Class CNStock
         Return ok
     End Function
 
+    ' Funcion para eliminar una línea de la tabla intermedia
+    Public Function deleteTablaIntermedia(idproducto As String, idenvase As String, nlote As String)
+        Dim ok = objStock.CmdDeleteTablaIntermedia(idproducto, idenvase, nlote)
+        Return ok
+    End Function
+
     ' Función para insertar los datos de la tabla intermedia al stock y eliminar la tabla intermedia
     Public Sub insertarStock()
         objStock.QryInsertarStock()

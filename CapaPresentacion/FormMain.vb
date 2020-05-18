@@ -4,14 +4,17 @@ Public Class FormMain
     Dim objCapaNegocio As New CNClientes
     Dim objCapaNegocioP As New CNProductos
     Dim objCapaNegocioS As New CNStock
+    Dim objCapaNegocioV As New CNVentas
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarClientes()
         listarProductos()
         listarStock()
+        listarVentas()
         panClientes.Show()
         panProductos.Hide()
         panStock.Hide()
+        panVentas.Hide()
 
     End Sub
 
@@ -19,22 +22,28 @@ Public Class FormMain
         panClientes.Show()
         panProductos.Hide()
         panStock.Hide()
+        panVentas.Hide()
     End Sub
 
     Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
         panClientes.Hide()
         panProductos.Show()
         panStock.Hide()
-    End Sub
-
-    Private Sub btnStock_Click(sender As Object, e As EventArgs)
-
+        panVentas.Hide()
     End Sub
 
     Private Sub btnStock_Click_1(sender As Object, e As EventArgs) Handles btnStock.Click
         panClientes.Hide()
         panProductos.Hide()
         panStock.Show()
+        panVentas.Hide()
+    End Sub
+
+    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
+        panClientes.Hide()
+        panProductos.Hide()
+        panStock.Hide()
+        panVentas.Show()
     End Sub
 
 
@@ -218,5 +227,14 @@ Public Class FormMain
         End If
 
 
+    End Sub
+
+    ' LISTENERS DEL PANEL DE VENTAS
+    Sub listarVentas()
+        dgvVentas.DataSource = objCapaNegocioV.obtenerPedidos
+    End Sub
+
+    Private Sub txtBuscarV_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarV.TextChanged
+        dgvVentas.DataSource = objCapaNegocioV.obtenerPedidosFiltro(txtBuscarV.Text)
     End Sub
 End Class

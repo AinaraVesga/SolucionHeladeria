@@ -77,6 +77,7 @@ Public Class FormAñadirStock
     ' Añadir lineas de stock a la tabla intermedia
     Private Sub btnAñadir2_Click(sender As Object, e As EventArgs) Handles btnAñadir2.Click
 
+
         Dim idproducto As String = txtID2.Text
         Dim idenvase As String = cbxEnvase.SelectedValue
         Dim nlote As String = txtLote.Text
@@ -95,5 +96,27 @@ Public Class FormAñadirStock
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         objStock.insertarStock()
         Close()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If dgvNuevoStock.Rows.Count > 1 Then
+            Dim row = dgvNuevoStock.CurrentRow
+            Dim idproducto = row.Cells(0).Value.ToString
+            Dim idenvase = row.Cells(1).Value.ToString
+            Dim nlote = row.Cells(2).Value.ToString
+
+            Dim ok = objStock.deleteTablaIntermedia(idproducto, idenvase, nlote)
+
+            If ok Then
+                MessageBox.Show("Se ha eliminado correctamente.")
+            Else
+                MessageBox.Show("Ha ocurrido un error.")
+            End If
+
+            dgvNuevoStock.DataSource = objStock.listarTablaIntermedia()
+        Else
+            MessageBox.Show("No existen registros para eliminar.")
+        End If
+
     End Sub
 End Class

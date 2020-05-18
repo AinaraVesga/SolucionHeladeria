@@ -33,6 +33,7 @@ Partial Class FormAñadirStock
         Me.cbxProducto = New System.Windows.Forms.ComboBox()
         Me.lblProducto = New System.Windows.Forms.Label()
         Me.panBody2 = New System.Windows.Forms.Panel()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.txtID2 = New System.Windows.Forms.TextBox()
         Me.lblID2 = New System.Windows.Forms.Label()
@@ -47,7 +48,7 @@ Partial Class FormAñadirStock
         Me.lblLote2 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.lblProducto2 = New System.Windows.Forms.Label()
-        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.panTitulo.SuspendLayout()
         Me.panBody1.SuspendLayout()
         Me.panBody2.SuspendLayout()
@@ -152,6 +153,7 @@ Partial Class FormAñadirStock
         '
         'panBody2
         '
+        Me.panBody2.Controls.Add(Me.btnEliminar)
         Me.panBody2.Controls.Add(Me.txtPrecio)
         Me.panBody2.Controls.Add(Me.lblPrecio)
         Me.panBody2.Controls.Add(Me.txtID2)
@@ -171,6 +173,13 @@ Partial Class FormAñadirStock
         Me.panBody2.Name = "panBody2"
         Me.panBody2.Size = New System.Drawing.Size(1200, 385)
         Me.panBody2.TabIndex = 2
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.Location = New System.Drawing.Point(226, 164)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(90, 20)
+        Me.txtPrecio.TabIndex = 14
         '
         'lblPrecio
         '
@@ -210,7 +219,7 @@ Partial Class FormAñadirStock
         'dgvNuevoStock
         '
         Me.dgvNuevoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvNuevoStock.Location = New System.Drawing.Point(379, 19)
+        Me.dgvNuevoStock.Location = New System.Drawing.Point(371, 45)
         Me.dgvNuevoStock.Name = "dgvNuevoStock"
         Me.dgvNuevoStock.Size = New System.Drawing.Size(750, 261)
         Me.dgvNuevoStock.TabIndex = 9
@@ -293,12 +302,14 @@ Partial Class FormAñadirStock
         Me.lblProducto2.TabIndex = 0
         Me.lblProducto2.Text = "Producto:"
         '
-        'txtPrecio
+        'btnEliminar
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(226, 164)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(90, 20)
-        Me.txtPrecio.TabIndex = 14
+        Me.btnEliminar.Location = New System.Drawing.Point(1046, 19)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 15
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'FormAñadirStock
         '
@@ -348,4 +359,5 @@ Partial Class FormAñadirStock
     Friend WithEvents lblID2 As Label
     Friend WithEvents lblPrecio As Label
     Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents btnEliminar As Button
 End Class

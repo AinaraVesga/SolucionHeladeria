@@ -188,6 +188,28 @@ Public Class CDStock
         conn.Close()
     End Sub
 
+    ' eliminar linea de tabla intermedia
+    Public Function CmdDeleteTablaIntermedia(idproducto As String, idenvase As String, nlote As String)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "DELETE FROM INSERTAR WHERE IDPRODUCTO = @idproducto AND IDENVASE = @idenvase AND NLOTE = @nlote"
+            cmd.Parameters.AddWithValue("@idproducto", idproducto)
+            cmd.Parameters.AddWithValue("@idenvase", idenvase)
+            cmd.Parameters.AddWithValue("@nlote", nlote)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
     ' eliminar la tabla insertar
     Public Sub QryEliminarTablaIntermedia()
         Dim query = "DROP TABLE INSERTAR;"

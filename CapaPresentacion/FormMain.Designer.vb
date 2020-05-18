@@ -41,6 +41,12 @@ Partial Class FormMain
         Me.btnAñadirP = New System.Windows.Forms.Button()
         Me.txtBuscarP = New System.Windows.Forms.TextBox()
         Me.panContenedor = New System.Windows.Forms.Panel()
+        Me.panVentas = New System.Windows.Forms.Panel()
+        Me.btnEditarV = New System.Windows.Forms.Button()
+        Me.btnEliminarV = New System.Windows.Forms.Button()
+        Me.dgvVentas = New System.Windows.Forms.DataGridView()
+        Me.btnNuevaV = New System.Windows.Forms.Button()
+        Me.txtBuscarV = New System.Windows.Forms.TextBox()
         Me.panStock = New System.Windows.Forms.Panel()
         Me.btnEditarS = New System.Windows.Forms.Button()
         Me.btnEliminarS = New System.Windows.Forms.Button()
@@ -53,6 +59,8 @@ Partial Class FormMain
         Me.panProductos.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panContenedor.SuspendLayout()
+        Me.panVentas.SuspendLayout()
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panStock.SuspendLayout()
         CType(Me.dgvStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -240,6 +248,7 @@ Partial Class FormMain
         '
         'panContenedor
         '
+        Me.panContenedor.Controls.Add(Me.panVentas)
         Me.panContenedor.Controls.Add(Me.panStock)
         Me.panContenedor.Controls.Add(Me.panProductos)
         Me.panContenedor.Controls.Add(Me.panClientes)
@@ -247,6 +256,66 @@ Partial Class FormMain
         Me.panContenedor.Name = "panContenedor"
         Me.panContenedor.Size = New System.Drawing.Size(607, 449)
         Me.panContenedor.TabIndex = 7
+        '
+        'panVentas
+        '
+        Me.panVentas.Controls.Add(Me.btnEditarV)
+        Me.panVentas.Controls.Add(Me.btnEliminarV)
+        Me.panVentas.Controls.Add(Me.dgvVentas)
+        Me.panVentas.Controls.Add(Me.btnNuevaV)
+        Me.panVentas.Controls.Add(Me.txtBuscarV)
+        Me.panVentas.Location = New System.Drawing.Point(1, 1)
+        Me.panVentas.Name = "panVentas"
+        Me.panVentas.Size = New System.Drawing.Size(605, 447)
+        Me.panVentas.TabIndex = 8
+        '
+        'btnEditarV
+        '
+        Me.btnEditarV.Location = New System.Drawing.Point(478, 51)
+        Me.btnEditarV.Name = "btnEditarV"
+        Me.btnEditarV.Size = New System.Drawing.Size(97, 23)
+        Me.btnEditarV.TabIndex = 5
+        Me.btnEditarV.Text = "Editar"
+        Me.btnEditarV.UseVisualStyleBackColor = True
+        '
+        'btnEliminarV
+        '
+        Me.btnEliminarV.Location = New System.Drawing.Point(375, 51)
+        Me.btnEliminarV.Name = "btnEliminarV"
+        Me.btnEliminarV.Size = New System.Drawing.Size(97, 23)
+        Me.btnEliminarV.TabIndex = 4
+        Me.btnEliminarV.Text = "Eliminar"
+        Me.btnEliminarV.UseVisualStyleBackColor = True
+        '
+        'dgvVentas
+        '
+        Me.dgvVentas.AllowUserToAddRows = False
+        Me.dgvVentas.AllowUserToDeleteRows = False
+        Me.dgvVentas.AllowUserToResizeColumns = False
+        Me.dgvVentas.AllowUserToResizeRows = False
+        Me.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVentas.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvVentas.Location = New System.Drawing.Point(37, 80)
+        Me.dgvVentas.MultiSelect = False
+        Me.dgvVentas.Name = "dgvVentas"
+        Me.dgvVentas.Size = New System.Drawing.Size(538, 358)
+        Me.dgvVentas.TabIndex = 3
+        '
+        'btnNuevaV
+        '
+        Me.btnNuevaV.Location = New System.Drawing.Point(478, 17)
+        Me.btnNuevaV.Name = "btnNuevaV"
+        Me.btnNuevaV.Size = New System.Drawing.Size(97, 23)
+        Me.btnNuevaV.TabIndex = 2
+        Me.btnNuevaV.Text = "Nueva Venta"
+        Me.btnNuevaV.UseVisualStyleBackColor = True
+        '
+        'txtBuscarV
+        '
+        Me.txtBuscarV.Location = New System.Drawing.Point(37, 53)
+        Me.txtBuscarV.Name = "txtBuscarV"
+        Me.txtBuscarV.Size = New System.Drawing.Size(225, 20)
+        Me.txtBuscarV.TabIndex = 1
         '
         'panStock
         '
@@ -326,6 +395,9 @@ Partial Class FormMain
         Me.panProductos.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panContenedor.ResumeLayout(False)
+        Me.panVentas.ResumeLayout(False)
+        Me.panVentas.PerformLayout()
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panStock.ResumeLayout(False)
         Me.panStock.PerformLayout()
         CType(Me.dgvStock, System.ComponentModel.ISupportInitialize).EndInit()
@@ -358,4 +430,10 @@ Partial Class FormMain
     Public WithEvents dgvStock As DataGridView
     Friend WithEvents btnNuevoS As Button
     Friend WithEvents txtBuscarS As TextBox
+    Friend WithEvents panVentas As Panel
+    Friend WithEvents btnEditarV As Button
+    Friend WithEvents btnEliminarV As Button
+    Public WithEvents dgvVentas As DataGridView
+    Friend WithEvents btnNuevaV As Button
+    Friend WithEvents txtBuscarV As TextBox
 End Class
