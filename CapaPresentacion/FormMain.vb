@@ -237,4 +237,12 @@ Public Class FormMain
     Private Sub txtBuscarV_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarV.TextChanged
         dgvVentas.DataSource = objCapaNegocioV.obtenerPedidosFiltro(txtBuscarV.Text)
     End Sub
+
+    Private Sub btnNuevaV_Click(sender As Object, e As EventArgs) Handles btnNuevaV.Click
+        Dim fNuevoPedido As New FormNuevoPedido
+        AddOwnedForm(fNuevoPedido)
+        fNuevoPedido.ShowDialog()
+        listarVentas()
+
+    End Sub
 End Class

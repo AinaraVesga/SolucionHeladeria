@@ -35,4 +35,33 @@ Public Class CDVentas
         Return table
     End Function
 
+    ' Obtener el último pedido registrado
+    Function QryUltimoPedido() As DataRow
+        Dim query = "SELECT * FROM PEDIDOS AS P, (SELECT Max(IDPEDIDO) AS ULTIMO FROM PEDIDOS) AS U WHERE P.IDPEDIDO LIKE U.ULTIMO"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader()
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Dim row = table.Select.FirstOrDefault()
+        Return row
+    End Function
+
+    ' Obtener el el id y el nombre de todos los clientes
+    Function QryListaClientes() As DataTable
+        Dim query = "SELECT IDCLIENTE, NOMBRE FROM CLIENTES"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader()
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
 End Class

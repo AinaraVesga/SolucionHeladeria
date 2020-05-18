@@ -68,6 +68,7 @@
     <Compile Include="CEFacturacion.vb" />
     <Compile Include="CEIVA.vb" />
     <Compile Include="CENLote.vb" />
+    <Compile Include="CEPedido.vb" />
     <Compile Include="CEProducto.vb" />
     <Compile Include="CEStock.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
