@@ -31,15 +31,15 @@ Partial Class FormNuevoPedido
         Me.lblIdCliente = New System.Windows.Forms.Label()
         Me.txtIdCliente = New System.Windows.Forms.TextBox()
         Me.lblProducto = New System.Windows.Forms.Label()
-        Me.cbProducto = New System.Windows.Forms.ComboBox()
+        Me.cbxProducto = New System.Windows.Forms.ComboBox()
         Me.lblIdProducto = New System.Windows.Forms.Label()
         Me.txtIdProducto = New System.Windows.Forms.TextBox()
         Me.lblEnvase = New System.Windows.Forms.Label()
         Me.cbxEnvase = New System.Windows.Forms.ComboBox()
         Me.lblIdEnvase = New System.Windows.Forms.Label()
-        Me.txtEnvase = New System.Windows.Forms.TextBox()
-        Me.lblNlote = New System.Windows.Forms.Label()
-        Me.txtNlote = New System.Windows.Forms.TextBox()
+        Me.txtIdEnvase = New System.Windows.Forms.TextBox()
+        Me.lblUniMax = New System.Windows.Forms.Label()
+        Me.txtUniMax = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblUnidades = New System.Windows.Forms.Label()
@@ -64,7 +64,7 @@ Partial Class FormNuevoPedido
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 68)
+        Me.Panel1.Size = New System.Drawing.Size(1104, 68)
         Me.Panel1.TabIndex = 0
         '
         'lblNuevoPedido
@@ -139,13 +139,13 @@ Partial Class FormNuevoPedido
         Me.lblProducto.TabIndex = 7
         Me.lblProducto.Text = "Producto"
         '
-        'cbProducto
+        'cbxProducto
         '
-        Me.cbProducto.FormattingEnabled = True
-        Me.cbProducto.Location = New System.Drawing.Point(74, 220)
-        Me.cbProducto.Name = "cbProducto"
-        Me.cbProducto.Size = New System.Drawing.Size(161, 21)
-        Me.cbProducto.TabIndex = 8
+        Me.cbxProducto.FormattingEnabled = True
+        Me.cbxProducto.Location = New System.Drawing.Point(74, 220)
+        Me.cbxProducto.Name = "cbxProducto"
+        Me.cbxProducto.Size = New System.Drawing.Size(161, 21)
+        Me.cbxProducto.TabIndex = 8
         '
         'lblIdProducto
         '
@@ -169,9 +169,9 @@ Partial Class FormNuevoPedido
         Me.lblEnvase.AutoSize = True
         Me.lblEnvase.Location = New System.Drawing.Point(71, 258)
         Me.lblEnvase.Name = "lblEnvase"
-        Me.lblEnvase.Size = New System.Drawing.Size(43, 13)
+        Me.lblEnvase.Size = New System.Drawing.Size(58, 13)
         Me.lblEnvase.TabIndex = 11
-        Me.lblEnvase.Text = "Envase"
+        Me.lblEnvase.Text = "Envase (L)"
         '
         'cbxEnvase
         '
@@ -190,52 +190,52 @@ Partial Class FormNuevoPedido
         Me.lblIdEnvase.TabIndex = 13
         Me.lblIdEnvase.Text = "ID Envase"
         '
-        'txtEnvase
+        'txtIdEnvase
         '
-        Me.txtEnvase.Enabled = False
-        Me.txtEnvase.Location = New System.Drawing.Point(244, 275)
-        Me.txtEnvase.Name = "txtEnvase"
-        Me.txtEnvase.Size = New System.Drawing.Size(100, 20)
-        Me.txtEnvase.TabIndex = 14
+        Me.txtIdEnvase.Enabled = False
+        Me.txtIdEnvase.Location = New System.Drawing.Point(244, 275)
+        Me.txtIdEnvase.Name = "txtIdEnvase"
+        Me.txtIdEnvase.Size = New System.Drawing.Size(100, 20)
+        Me.txtIdEnvase.TabIndex = 14
         '
-        'lblNlote
+        'lblUniMax
         '
-        Me.lblNlote.AutoSize = True
-        Me.lblNlote.Location = New System.Drawing.Point(71, 311)
-        Me.lblNlote.Name = "lblNlote"
-        Me.lblNlote.Size = New System.Drawing.Size(58, 13)
-        Me.lblNlote.TabIndex = 15
-        Me.lblNlote.Text = "Nº de Lote"
+        Me.lblUniMax.AutoSize = True
+        Me.lblUniMax.Location = New System.Drawing.Point(71, 311)
+        Me.lblUniMax.Name = "lblUniMax"
+        Me.lblUniMax.Size = New System.Drawing.Size(107, 13)
+        Me.lblUniMax.TabIndex = 15
+        Me.lblUniMax.Text = "Unidades disponibles"
         '
-        'txtNlote
+        'txtUniMax
         '
-        Me.txtNlote.Enabled = False
-        Me.txtNlote.Location = New System.Drawing.Point(74, 327)
-        Me.txtNlote.Name = "txtNlote"
-        Me.txtNlote.Size = New System.Drawing.Size(270, 20)
-        Me.txtNlote.TabIndex = 16
+        Me.txtUniMax.Enabled = False
+        Me.txtUniMax.Location = New System.Drawing.Point(74, 327)
+        Me.txtUniMax.Name = "txtUniMax"
+        Me.txtUniMax.Size = New System.Drawing.Size(161, 20)
+        Me.txtUniMax.TabIndex = 16
         '
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
         Me.lblPrecio.Location = New System.Drawing.Point(71, 365)
         Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(92, 13)
+        Me.lblPrecio.Size = New System.Drawing.Size(107, 13)
         Me.lblPrecio.TabIndex = 19
-        Me.lblPrecio.Text = "Precio por Unidad"
+        Me.lblPrecio.Text = "Precio por Unidad (€)"
         '
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
         Me.txtPrecio.Location = New System.Drawing.Point(74, 381)
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(161, 20)
+        Me.txtPrecio.Size = New System.Drawing.Size(270, 20)
         Me.txtPrecio.TabIndex = 20
         '
         'lblUnidades
         '
         Me.lblUnidades.AutoSize = True
-        Me.lblUnidades.Location = New System.Drawing.Point(241, 365)
+        Me.lblUnidades.Location = New System.Drawing.Point(241, 311)
         Me.lblUnidades.Name = "lblUnidades"
         Me.lblUnidades.Size = New System.Drawing.Size(52, 13)
         Me.lblUnidades.TabIndex = 21
@@ -243,19 +243,21 @@ Partial Class FormNuevoPedido
         '
         'numUnidades
         '
-        Me.numUnidades.Location = New System.Drawing.Point(244, 381)
+        Me.numUnidades.Location = New System.Drawing.Point(244, 327)
+        Me.numUnidades.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numUnidades.Name = "numUnidades"
         Me.numUnidades.Size = New System.Drawing.Size(100, 20)
         Me.numUnidades.TabIndex = 22
+        Me.numUnidades.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'lblBI
         '
         Me.lblBI.AutoSize = True
         Me.lblBI.Location = New System.Drawing.Point(71, 414)
         Me.lblBI.Name = "lblBI"
-        Me.lblBI.Size = New System.Drawing.Size(79, 13)
+        Me.lblBI.Size = New System.Drawing.Size(94, 13)
         Me.lblBI.TabIndex = 23
-        Me.lblBI.Text = "Base Imponible"
+        Me.lblBI.Text = "Base Imponible (€)"
         '
         'txtBI
         '
@@ -279,12 +281,12 @@ Partial Class FormNuevoPedido
         Me.dgvLineas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLineas.Location = New System.Drawing.Point(393, 164)
         Me.dgvLineas.Name = "dgvLineas"
-        Me.dgvLineas.Size = New System.Drawing.Size(374, 335)
+        Me.dgvLineas.Size = New System.Drawing.Size(675, 335)
         Me.dgvLineas.TabIndex = 26
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(361, 528)
+        Me.btnAceptar.Location = New System.Drawing.Point(545, 540)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 27
@@ -293,7 +295,7 @@ Partial Class FormNuevoPedido
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(692, 135)
+        Me.btnEliminar.Location = New System.Drawing.Point(993, 135)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 28
@@ -322,7 +324,7 @@ Partial Class FormNuevoPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.ClientSize = New System.Drawing.Size(1104, 575)
         Me.Controls.Add(Me.btnVerStock)
         Me.Controls.Add(Me.btnNuevoCliente)
         Me.Controls.Add(Me.btnEliminar)
@@ -335,15 +337,15 @@ Partial Class FormNuevoPedido
         Me.Controls.Add(Me.lblUnidades)
         Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.lblPrecio)
-        Me.Controls.Add(Me.txtNlote)
-        Me.Controls.Add(Me.lblNlote)
-        Me.Controls.Add(Me.txtEnvase)
+        Me.Controls.Add(Me.txtUniMax)
+        Me.Controls.Add(Me.lblUniMax)
+        Me.Controls.Add(Me.txtIdEnvase)
         Me.Controls.Add(Me.lblIdEnvase)
         Me.Controls.Add(Me.cbxEnvase)
         Me.Controls.Add(Me.lblEnvase)
         Me.Controls.Add(Me.txtIdProducto)
         Me.Controls.Add(Me.lblIdProducto)
-        Me.Controls.Add(Me.cbProducto)
+        Me.Controls.Add(Me.cbxProducto)
         Me.Controls.Add(Me.lblProducto)
         Me.Controls.Add(Me.txtIdCliente)
         Me.Controls.Add(Me.lblIdCliente)
@@ -372,15 +374,15 @@ Partial Class FormNuevoPedido
     Friend WithEvents lblIdCliente As Label
     Friend WithEvents txtIdCliente As TextBox
     Friend WithEvents lblProducto As Label
-    Friend WithEvents cbProducto As ComboBox
+    Friend WithEvents cbxProducto As ComboBox
     Friend WithEvents lblIdProducto As Label
     Friend WithEvents txtIdProducto As TextBox
     Friend WithEvents lblEnvase As Label
     Friend WithEvents cbxEnvase As ComboBox
     Friend WithEvents lblIdEnvase As Label
-    Friend WithEvents txtEnvase As TextBox
-    Friend WithEvents lblNlote As Label
-    Friend WithEvents txtNlote As TextBox
+    Friend WithEvents txtIdEnvase As TextBox
+    Friend WithEvents lblUniMax As Label
+    Friend WithEvents txtUniMax As TextBox
     Friend WithEvents lblPrecio As Label
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents lblUnidades As Label

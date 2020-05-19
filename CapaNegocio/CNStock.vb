@@ -29,7 +29,7 @@ Public Class CNStock
         If IsDBNull(row("NUM")) Then
             num = 1
         Else
-            num = CInt(row("NUM"))
+            num = CInt(row("NUM")) + 1
         End If
 
         Dim hoy As String = DateTime.Now.ToString("ddMMyyyy")
