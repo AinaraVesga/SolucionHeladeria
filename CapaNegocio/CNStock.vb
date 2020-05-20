@@ -50,12 +50,12 @@ Public Class CNStock
     Public Sub crearTablaIntermedia()
 
         Try
-            objStock.QryEliminarTablaIntermedia()
+            objStock.CmdDropTablaIntermedia()
         Catch ex As Exception
             Console.WriteLine("No existe tabla INSERTAR")
         End Try
 
-        objStock.QryCrearTablaIntermedia()
+        objStock.CmdCrearTablaIntermedia()
     End Sub
 
     ' Función para crear y listar las líneas de la tabla intermedia
@@ -78,7 +78,7 @@ Public Class CNStock
 
         Dim dt = objStock.QryUnidadesTablaIntermedia(idenvase)
         If dt.Rows.Count = 0 Then
-            ok = objStock.QryInsertarTablaIntermedia(stock)
+            ok = objStock.CmdInsertarTablaIntermedia(stock)
         Else
             Dim u As Integer = dt.Rows(0)("UNIDADES")
             unidades += u
@@ -96,8 +96,8 @@ Public Class CNStock
 
     ' Función para insertar los datos de la tabla intermedia al stock y eliminar la tabla intermedia
     Public Sub insertarStock()
-        objStock.QryInsertarStock()
-        objStock.QryEliminarTablaIntermedia()
+        objStock.CmdInsertarStock()
+        objStock.CmdDropTablaIntermedia()
     End Sub
 
     ' Función para obtener el nombre del producto

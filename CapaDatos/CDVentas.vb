@@ -125,7 +125,7 @@ Public Class CDVentas
     End Function
 
     ' crear una tabla intermedia para las líneas a insertar
-    Sub QryCrearTablaIntermedia()
+    Sub CmdCrearTablaIntermedia()
         Dim query = "SELECT * INTO ILINEAS FROM LINEAS WHERE 0=1;"
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -150,7 +150,7 @@ Public Class CDVentas
     End Function
 
     ' eliminar la tabla intermedia
-    Public Sub QryEliminarTablaIntermedia()
+    Public Sub CmdEliminarTablaIntermedia()
         Dim query = "DROP TABLE ILINEAS;"
         Dim conn = conexion.getConnection()
         conn.Open()

@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNClientes.vb" />
-    <Compile Include="CNDatosIVA.vb" />
     <Compile Include="CNFacturacion.vb" />
     <Compile Include="CNProductos.vb" />
     <Compile Include="CNStock.vb" />

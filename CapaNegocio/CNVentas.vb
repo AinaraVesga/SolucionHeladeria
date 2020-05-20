@@ -72,7 +72,7 @@ Public Class CNVentas
 
     ' Crear tabla intermedia
     Public Sub crearTablaIntermedia()
-        objDatosVentas.QryCrearTablaIntermedia()
+        objDatosVentas.CmdCrearTablaIntermedia()
     End Sub
 
     ' obtener lineas de la tabla intermedia
@@ -81,7 +81,7 @@ Public Class CNVentas
     End Function
 
     Public Sub eliminarTablaIntermedia()
-        objDatosVentas.QryEliminarTablaIntermedia()
+        objDatosVentas.CmdEliminarTablaIntermedia()
     End Sub
 
     ' añadir unidades al pedido

@@ -3,7 +3,7 @@ Imports System.Data.OleDb
 Imports CapaEntidad
 Public Class CDProductos
 
-    Dim conexion As New CDConexion
+    Private conexion As New CDConexion
 
     ' Listar todos los productos
     Function QryListarProductos() As DataTable

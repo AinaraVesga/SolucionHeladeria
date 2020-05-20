@@ -3,7 +3,7 @@ Imports System.Data.OleDb
 Imports CapaEntidad
 
 Public Class CDStock
-    Dim conexion As New CDConexion
+    Private conexion As New CDConexion
 
     ' Listar todos los productos en stock
     Function QryListarStock() As DataTable
@@ -81,7 +81,7 @@ Public Class CDStock
     End Function
 
     ' Crear una tabla intermedia para meter los stocks nuevos provisionales
-    Sub QryCrearTablaIntermedia()
+    Sub CmdCrearTablaIntermedia()
         Dim query = "SELECT * INTO INSERTAR FROM PRODSTOCK WHERE 0=1;"
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -109,7 +109,7 @@ Public Class CDStock
     End Function
 
     ' Insertar lineas en la tabla intermedia
-    Function QryInsertarTablaIntermedia(s As CEStock)
+    Function CmdInsertarTablaIntermedia(s As CEStock)
         Dim ok = False
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -175,7 +175,7 @@ Public Class CDStock
     End Function
 
     ' intertar filas de la tabla intermedia en prodstock
-    Public Sub QryInsertarStock()
+    Public Sub CmdInsertarStock()
         Dim query = "INSERT INTO PRODSTOCK SELECT INSERTAR.* FROM INSERTAR;"
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -211,7 +211,7 @@ Public Class CDStock
     End Function
 
     ' eliminar la tabla insertar
-    Public Sub QryEliminarTablaIntermedia()
+    Public Sub CmdDropTablaIntermedia()
         Dim query = "DROP TABLE INSERTAR;"
         Dim conn = conexion.getConnection()
         conn.Open()

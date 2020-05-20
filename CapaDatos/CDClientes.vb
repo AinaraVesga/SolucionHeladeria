@@ -4,7 +4,7 @@ Imports CapaEntidad
 
 Public Class CDClientes
 
-    Dim conexion As New CDConexion
+    Private conexion As New CDConexion
 
     ' Listar todos los clientes
     Function QryListarClientes() As DataTable

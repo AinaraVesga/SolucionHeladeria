@@ -4,7 +4,7 @@ Imports CapaEntidad
 
 Public Class CDFacturacion
 
-    Dim conexion As New CDConexion
+    Private conexion As New CDConexion
 
     ' Listamos los nombres de los tipos de facturacion
     Function QryListarFacturacionNames() As DataTable
