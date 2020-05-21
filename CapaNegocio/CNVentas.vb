@@ -211,5 +211,11 @@ Public Class CNVentas
         Return ok
     End Function
 
+    ' función para eliminar un pedido
+    Public Function eliminarPedido(idpedido As String)
+        Dim ok As Boolean = objDatosVentas.CmdDeletePedido(idpedido)
+        Return ok
+    End Function
+
 
 End Class

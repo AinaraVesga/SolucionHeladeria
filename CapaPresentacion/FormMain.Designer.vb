@@ -42,7 +42,7 @@ Partial Class FormMain
         Me.txtBuscarP = New System.Windows.Forms.TextBox()
         Me.panContenedor = New System.Windows.Forms.Panel()
         Me.panVentas = New System.Windows.Forms.Panel()
-        Me.btnEditarV = New System.Windows.Forms.Button()
+        Me.btnVerV = New System.Windows.Forms.Button()
         Me.btnEliminarV = New System.Windows.Forms.Button()
         Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.btnNuevaV = New System.Windows.Forms.Button()
@@ -259,7 +259,7 @@ Partial Class FormMain
         '
         'panVentas
         '
-        Me.panVentas.Controls.Add(Me.btnEditarV)
+        Me.panVentas.Controls.Add(Me.btnVerV)
         Me.panVentas.Controls.Add(Me.btnEliminarV)
         Me.panVentas.Controls.Add(Me.dgvVentas)
         Me.panVentas.Controls.Add(Me.btnNuevaV)
@@ -269,14 +269,14 @@ Partial Class FormMain
         Me.panVentas.Size = New System.Drawing.Size(605, 447)
         Me.panVentas.TabIndex = 8
         '
-        'btnEditarV
+        'btnVerV
         '
-        Me.btnEditarV.Location = New System.Drawing.Point(478, 51)
-        Me.btnEditarV.Name = "btnEditarV"
-        Me.btnEditarV.Size = New System.Drawing.Size(97, 23)
-        Me.btnEditarV.TabIndex = 5
-        Me.btnEditarV.Text = "Editar"
-        Me.btnEditarV.UseVisualStyleBackColor = True
+        Me.btnVerV.Location = New System.Drawing.Point(478, 51)
+        Me.btnVerV.Name = "btnVerV"
+        Me.btnVerV.Size = New System.Drawing.Size(97, 23)
+        Me.btnVerV.TabIndex = 5
+        Me.btnVerV.Text = "Ver"
+        Me.btnVerV.UseVisualStyleBackColor = True
         '
         'btnEliminarV
         '
@@ -431,7 +431,7 @@ Partial Class FormMain
     Friend WithEvents btnNuevoS As Button
     Friend WithEvents txtBuscarS As TextBox
     Friend WithEvents panVentas As Panel
-    Friend WithEvents btnEditarV As Button
+    Friend WithEvents btnVerV As Button
     Friend WithEvents btnEliminarV As Button
     Public WithEvents dgvVentas As DataGridView
     Friend WithEvents btnNuevaV As Button

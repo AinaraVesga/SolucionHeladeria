@@ -252,4 +252,8 @@ Public Class FormMain
         listarVentas()
 
     End Sub
+
+    Private Sub btnEliminarV_Click(sender As Object, e As EventArgs) Handles btnEliminarV.Click
+
+    End Sub
 End Class

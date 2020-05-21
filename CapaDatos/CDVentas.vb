@@ -435,4 +435,24 @@ Public Class CDVentas
         Return ok
     End Function
 
+    ' eliminar un pedido
+    Public Function CmdDeletePedido(idpedido As String)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "DELETE FROM PEDIDOS WHERE IDPEDIDO = @idpedido;"
+            cmd.Parameters.AddWithValue("@idpedido", idpedido)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
 End Class
