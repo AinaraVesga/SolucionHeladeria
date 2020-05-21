@@ -455,4 +455,19 @@ Public Class CDVentas
         Return ok
     End Function
 
+    ' listar las líneas de un pedido
+    Function QryListarLineasPedido(idpedido As String) As DataTable
+        Dim query = "SELECT * FROM LINEAS WHERE IDPEDIDO = @idpedido;"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idpedido", idpedido)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
 End Class

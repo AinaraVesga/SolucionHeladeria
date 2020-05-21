@@ -253,7 +253,48 @@ Public Class FormMain
 
     End Sub
 
-    Private Sub btnEliminarV_Click(sender As Object, e As EventArgs) Handles btnEliminarV.Click
+    Public Sub verPedido()
+        If dgvVentas.SelectedRows.Count = 0 Then
+            Dim row = dgvVentas.CurrentRow
+            Dim idpedido As String = row.Cells(0).Value.ToString
+            Dim idcliente As String = row.Cells(1).Value.ToString
+            Dim fecha As String = row.Cells(2).Value.ToString
+            Dim totalBI As Double = row.Cells(3).Value
+            Dim totalIVA As Double = row.Cells(6).Value
+            Dim totalRE As Double = row.Cells(7).Value
+            Dim total As Double = row.Cells(8).Value
 
+            Dim fVerPedido As New FormVerPedido(idpedido, idcliente, fecha, totalBI, totalIVA, totalRE, total)
+            AddOwnedForm(fVerPedido)
+            fVerPedido.ShowDialog()
+            listarVentas()
+
+        End If
+    End Sub
+
+    Private Sub btnEliminarV_Click(sender As Object, e As EventArgs) Handles btnEliminarV.Click
+        If dgvVentas.SelectedRows.Count = 0 Then
+            Dim row = dgvVentas.CurrentRow
+            Dim idpedido As String = row.Cells(0).Value.ToString
+            Dim idcliente As String = row.Cells(1).Value.ToString
+            Dim fecha As String = row.Cells(2).Value.ToString
+            Dim totalBI As Double = row.Cells(3).Value
+            Dim totalIVA As Double = row.Cells(6).Value
+            Dim totalRE As Double = row.Cells(7).Value
+            Dim total As Double = row.Cells(8).Value
+
+            Dim fEliminarPedido As New FormEliminarPedido(idpedido, idcliente, fecha, totalBI, totalIVA, totalRE, total)
+            AddOwnedForm(fEliminarPedido)
+            fEliminarPedido.ShowDialog()
+            listarVentas()
+        End If
+    End Sub
+
+    Private Sub btnVerV_Click(sender As Object, e As EventArgs) Handles btnVerV.Click
+        verPedido()
+    End Sub
+
+    Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVentas.CellContentClick
+        verPedido()
     End Sub
 End Class

@@ -217,5 +217,10 @@ Public Class CNVentas
         Return ok
     End Function
 
+    ' funcion para listar las lineas de un pedido
+    Public Function listarLineasPedido(idpedido As String) As DataTable
+        Return objDatosVentas.QryListarLineasPedido(idpedido)
+    End Function
+
 
 End Class

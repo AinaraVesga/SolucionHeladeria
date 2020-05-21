@@ -36,5 +36,4 @@ Public Class FormEditarStock
         Close()
     End Sub
 
-
 End Class

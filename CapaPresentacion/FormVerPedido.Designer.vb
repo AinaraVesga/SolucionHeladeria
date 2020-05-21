@@ -64,8 +64,10 @@ Partial Class FormVerPedido
         '
         'txtTotal
         '
+        Me.txtTotal.Enabled = False
         Me.txtTotal.Location = New System.Drawing.Point(61, 363)
         Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtTotal.Size = New System.Drawing.Size(227, 20)
         Me.txtTotal.TabIndex = 36
         '
@@ -80,8 +82,10 @@ Partial Class FormVerPedido
         '
         'txtRE
         '
+        Me.txtRE.Enabled = False
         Me.txtRE.Location = New System.Drawing.Point(61, 314)
         Me.txtRE.Name = "txtRE"
+        Me.txtRE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtRE.Size = New System.Drawing.Size(227, 20)
         Me.txtRE.TabIndex = 34
         '
@@ -96,8 +100,10 @@ Partial Class FormVerPedido
         '
         'txtIVA
         '
+        Me.txtIVA.Enabled = False
         Me.txtIVA.Location = New System.Drawing.Point(61, 261)
         Me.txtIVA.Name = "txtIVA"
+        Me.txtIVA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtIVA.Size = New System.Drawing.Size(227, 20)
         Me.txtIVA.TabIndex = 32
         '
@@ -112,8 +118,10 @@ Partial Class FormVerPedido
         '
         'txtBI
         '
+        Me.txtBI.Enabled = False
         Me.txtBI.Location = New System.Drawing.Point(61, 212)
         Me.txtBI.Name = "txtBI"
+        Me.txtBI.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtBI.Size = New System.Drawing.Size(227, 20)
         Me.txtBI.TabIndex = 30
         '
@@ -128,6 +136,7 @@ Partial Class FormVerPedido
         '
         'txtFecha
         '
+        Me.txtFecha.Enabled = False
         Me.txtFecha.Location = New System.Drawing.Point(176, 116)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(112, 20)
@@ -153,6 +162,7 @@ Partial Class FormVerPedido
         '
         'txtIDPedido
         '
+        Me.txtIDPedido.Enabled = False
         Me.txtIDPedido.Location = New System.Drawing.Point(61, 116)
         Me.txtIDPedido.Name = "txtIDPedido"
         Me.txtIDPedido.Size = New System.Drawing.Size(100, 20)
@@ -181,6 +191,7 @@ Partial Class FormVerPedido
         '
         'txtCliente
         '
+        Me.txtCliente.Enabled = False
         Me.txtCliente.Location = New System.Drawing.Point(61, 164)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(227, 20)

@@ -90,6 +90,7 @@ Partial Class FormEliminarPedido
         '
         'txtIDPedido
         '
+        Me.txtIDPedido.Enabled = False
         Me.txtIDPedido.Location = New System.Drawing.Point(61, 142)
         Me.txtIDPedido.Name = "txtIDPedido"
         Me.txtIDPedido.Size = New System.Drawing.Size(100, 20)
@@ -106,6 +107,7 @@ Partial Class FormEliminarPedido
         '
         'txtCliente
         '
+        Me.txtCliente.Enabled = False
         Me.txtCliente.Location = New System.Drawing.Point(61, 190)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(227, 20)
@@ -122,6 +124,7 @@ Partial Class FormEliminarPedido
         '
         'txtFecha
         '
+        Me.txtFecha.Enabled = False
         Me.txtFecha.Location = New System.Drawing.Point(176, 142)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(112, 20)
@@ -138,8 +141,10 @@ Partial Class FormEliminarPedido
         '
         'txtBI
         '
+        Me.txtBI.Enabled = False
         Me.txtBI.Location = New System.Drawing.Point(61, 238)
         Me.txtBI.Name = "txtBI"
+        Me.txtBI.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtBI.Size = New System.Drawing.Size(227, 20)
         Me.txtBI.TabIndex = 12
         '
@@ -154,8 +159,10 @@ Partial Class FormEliminarPedido
         '
         'txtIVA
         '
+        Me.txtIVA.Enabled = False
         Me.txtIVA.Location = New System.Drawing.Point(61, 287)
         Me.txtIVA.Name = "txtIVA"
+        Me.txtIVA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtIVA.Size = New System.Drawing.Size(227, 20)
         Me.txtIVA.TabIndex = 14
         '
@@ -170,8 +177,10 @@ Partial Class FormEliminarPedido
         '
         'txtRE
         '
+        Me.txtRE.Enabled = False
         Me.txtRE.Location = New System.Drawing.Point(61, 340)
         Me.txtRE.Name = "txtRE"
+        Me.txtRE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtRE.Size = New System.Drawing.Size(227, 20)
         Me.txtRE.TabIndex = 16
         '
@@ -186,8 +195,10 @@ Partial Class FormEliminarPedido
         '
         'txtTotal
         '
+        Me.txtTotal.Enabled = False
         Me.txtTotal.Location = New System.Drawing.Point(61, 389)
         Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtTotal.Size = New System.Drawing.Size(227, 20)
         Me.txtTotal.TabIndex = 18
         '
