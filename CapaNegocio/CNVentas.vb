@@ -46,7 +46,7 @@ Public Class CNVentas
 
     ' función para obtener la lista de nº de lote y unidades de un producto en stock
     Public Function listarLoteUnidades(idproducto As String, idenvase As String) As DataTable
-        Return objDatosVentas.QryLoteUnidades(idproducto, idenvase)
+        Return objDatosVentas.QryBuscarStock(idproducto, idenvase)
     End Function
 
     ' obtener el número total de unidades de un producto y envase concretos
@@ -80,17 +80,60 @@ Public Class CNVentas
         Return objDatosVentas.QryListarTablaIntermedia
     End Function
 
+    ' eliminar la tabla intermedia
     Public Sub eliminarTablaIntermedia()
         objDatosVentas.CmdEliminarTablaIntermedia()
+    End Sub
+
+    ' crear una tabla para editar el stock sin confirmar
+    Public Sub crearTablaEditarStock()
+        objDatosVentas.CmdCrearTablaEditarStock()
+    End Sub
+
+    ' eliminar la tabla intermedia para editar el stock
+    Public Sub eliminarTablaEditarStock()
+        objDatosVentas.CmdEliminarTablaEditarStock()
     End Sub
 
     ' añadir unidades al pedido
     Public Function añadirUnidades(idpedido As String, idproducto As String, idenvase As String, unidades As Integer,
                                    precio As Double, bi As Double) As Boolean
 
+        Dim u As Integer = unidades
+        Dim i As Integer = 0
+        Dim ok As Boolean = True
 
+        While u > 0 And ok
+            Dim lotes As DataTable = objDatosVentas.QryBuscarStock(idproducto, idenvase)
+            Dim lote As String = lotes(i)(0)
+            Dim uLote As Integer = lotes(i)(1)
+            Dim uLinea As Integer
 
-        Return True
+            If uLote > u Then
+                Dim resto = uLote - u
+                uLinea = u
+                u = 0
+                objDatosVentas.CmdUpdateTablaEditarStock(idproducto, idenvase, lote, resto)
+            Else
+                u = u - uLote
+                uLinea = uLote
+                objDatosVentas.CmdDeleteTablaIntermediaStock(idproducto, idenvase, lote)
+            End If
+
+            Dim linea As New CELinea(idpedido, idproducto, idenvase, lote, uLinea, precio, bi)
+
+            Dim dt As DataTable = objDatosVentas.QryBuscarTablaIntermedia(linea)
+            If dt.Rows.Count = 0 Then
+                ok = objDatosVentas.CmdInsertarTablaIntermediaLinea(linea)
+            Else
+                uLote = dt.Rows(0)("UNIDADES")
+                uLinea += uLote
+                ok = objDatosVentas.CmdUpdateTablaIntermediaLinea(linea, uLinea)
+            End If
+
+        End While
+
+        Return ok
     End Function
 
 

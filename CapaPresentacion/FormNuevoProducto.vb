@@ -26,27 +26,4 @@ Public Class FormNuevoProducto
         End If
     End Sub
 
-    Private Sub FormNuevoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub lblAñadirProd_Click(sender As Object, e As EventArgs) Handles lblAñadirProd.Click
-
-    End Sub
-
-    Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
-
-    End Sub
-
-    Private Sub lblNombre_Click(sender As Object, e As EventArgs) Handles lblNombre.Click
-
-    End Sub
-
-    Private Sub lblId_Click(sender As Object, e As EventArgs) Handles lblId.Click
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class

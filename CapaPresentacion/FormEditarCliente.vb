@@ -3,9 +3,7 @@ Imports CapaEntidad
 
 Public Class FormEditarCliente
 
-    Dim objClienteE As New CECliente
     Dim objCliente As New CNClientes
-
     Dim fa As String
 
     Public Sub New()

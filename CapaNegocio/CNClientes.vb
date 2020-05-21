@@ -3,7 +3,7 @@ Imports CapaEntidad
 
 Public Class CNClientes
     ' Creamos el objeto de la capa datos
-    Dim objCapaDatos As New CDClientes
+    Private objCapaDatos As New CDClientes
 
     ' Funcion que devuelve la lista de clientes
     Public Function ObtenerClientes() As DataTable

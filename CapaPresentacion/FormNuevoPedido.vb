@@ -97,9 +97,13 @@ Public Class FormNuevoPedido
 
         If ok Then
             MessageBox.Show("Se ha añadido correctamente.")
+            dgvLineas.DataSource = objVentas.listarTablaIntermedia()
+            listarStock()
+            listarEnvases()
         Else
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
     End Sub
+
 End Class

@@ -67,6 +67,7 @@
     <Compile Include="CECliente.vb" />
     <Compile Include="CEFacturacion.vb" />
     <Compile Include="CEIVA.vb" />
+    <Compile Include="CELinea.vb" />
     <Compile Include="CENLote.vb" />
     <Compile Include="CEPedido.vb" />
     <Compile Include="CEProducto.vb" />

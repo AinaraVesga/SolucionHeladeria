@@ -239,6 +239,12 @@ Public Class FormMain
     End Sub
 
     Private Sub btnNuevaV_Click(sender As Object, e As EventArgs) Handles btnNuevaV.Click
+        Try
+            objCapaNegocioV.eliminarTablaEditarStock()
+        Catch ex As Exception
+            Console.WriteLine("No existe tabla.")
+        End Try
+        objCapaNegocioV.crearTablaEditarStock()
         Dim fNuevoPedido As New FormNuevoPedido
         AddOwnedForm(fNuevoPedido)
         fNuevoPedido.ShowDialog()
