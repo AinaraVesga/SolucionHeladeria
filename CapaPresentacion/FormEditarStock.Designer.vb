@@ -61,9 +61,9 @@ Partial Class FormEditarStock
         Me.lblEditarStock.ForeColor = System.Drawing.SystemColors.Control
         Me.lblEditarStock.Location = New System.Drawing.Point(54, 25)
         Me.lblEditarStock.Name = "lblEditarStock"
-        Me.lblEditarStock.Size = New System.Drawing.Size(206, 24)
+        Me.lblEditarStock.Size = New System.Drawing.Size(204, 24)
         Me.lblEditarStock.TabIndex = 3
-        Me.lblEditarStock.Text = "AÑADIR PRODUCTO"
+        Me.lblEditarStock.Text = "EDITAR PRODUCTO"
         '
         'lblIdProd
         '

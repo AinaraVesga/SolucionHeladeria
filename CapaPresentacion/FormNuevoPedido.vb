@@ -153,6 +153,12 @@ Public Class FormNuevoPedido
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
+    End Sub
 
+    Private Sub btnNuevoCliente_Click(sender As Object, e As EventArgs) Handles btnNuevoCliente.Click
+        Dim fNuevoCliente As New FormNuevoCliente
+        AddOwnedForm(fNuevoCliente)
+        fNuevoCliente.ShowDialog()
+        listarClientes()
     End Sub
 End Class

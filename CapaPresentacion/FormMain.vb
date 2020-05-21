@@ -60,6 +60,7 @@ Public Class FormMain
         Dim fNuevoCliente As New FormNuevoCliente()
         AddOwnedForm(fNuevoCliente)
         fNuevoCliente.ShowDialog()
+        listarClientes()
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditarE.Click

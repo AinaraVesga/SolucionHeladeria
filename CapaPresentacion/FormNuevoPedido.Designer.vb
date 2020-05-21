@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormNuevoPedido
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormNuevoPedido
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblNuevoPedido = New System.Windows.Forms.Label()
@@ -51,7 +51,6 @@ Partial Class FormNuevoPedido
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
-        Me.btnVerStock = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.numUnidades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvLineas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,21 +310,11 @@ Partial Class FormNuevoPedido
         Me.btnNuevoCliente.Text = "NUEVO CLIENTE"
         Me.btnNuevoCliente.UseVisualStyleBackColor = True
         '
-        'btnVerStock
-        '
-        Me.btnVerStock.Location = New System.Drawing.Point(522, 108)
-        Me.btnVerStock.Name = "btnVerStock"
-        Me.btnVerStock.Size = New System.Drawing.Size(87, 23)
-        Me.btnVerStock.TabIndex = 30
-        Me.btnVerStock.Text = "VER STOCK"
-        Me.btnVerStock.UseVisualStyleBackColor = True
-        '
         'FormNuevoPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1104, 575)
-        Me.Controls.Add(Me.btnVerStock)
         Me.Controls.Add(Me.btnNuevoCliente)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnAceptar)
@@ -394,5 +383,4 @@ Partial Class FormNuevoPedido
     Friend WithEvents btnAceptar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnNuevoCliente As Button
-    Friend WithEvents btnVerStock As Button
 End Class
