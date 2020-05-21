@@ -108,6 +108,7 @@ Public Class CNVentas
             Dim lote As String = lotes(i)(0)
             Dim uLote As Integer = lotes(i)(1)
             Dim uLinea As Integer
+            Dim base As Double
 
             If uLote > u Then
                 Dim resto = uLote - u
@@ -117,10 +118,11 @@ Public Class CNVentas
             Else
                 u = u - uLote
                 uLinea = uLote
-                objDatosVentas.CmdDeleteTablaIntermediaStock(idproducto, idenvase, lote)
+                objDatosVentas.CmdUpdateTablaEditarStock(idproducto, idenvase, lote, 0)
             End If
 
-            Dim linea As New CELinea(idpedido, idproducto, idenvase, lote, uLinea, precio, bi)
+            base = precio * uLinea
+            Dim linea As New CELinea(idpedido, idproducto, idenvase, lote, uLinea, precio, base)
 
             Dim dt As DataTable = objDatosVentas.QryBuscarTablaIntermedia(linea)
             If dt.Rows.Count = 0 Then
@@ -132,6 +134,43 @@ Public Class CNVentas
             End If
 
         End While
+
+        Return ok
+    End Function
+
+    ' funcion para eliminar una linea de ILINEA
+    Public Function eliminarLinea(l As CELinea)
+        Dim ok As Boolean
+
+        ok = objDatosVentas.CmdDeleteTablaIntermediaLinea(l)
+
+        If ok Then
+            Dim dt As DataTable = objDatosVentas.QryUnidadesStock(l)
+            Dim unidades As Integer = dt(0)(0)
+            MsgBox(unidades)
+            unidades += l.unidades
+            MsgBox(unidades)
+            ok = objDatosVentas.CmdUpdateTablaEditarStock(l.idproducto, l.idenvase, l.nlote, unidades)
+        End If
+
+        Return ok
+    End Function
+
+    ' funcion para obtener el importe total de las lineas
+    Public Function baseImponible() As Double
+        Dim dt As DataTable = objDatosVentas.QryBaseImponible
+        Return dt(0)(0)
+    End Function
+
+    ' función para añadir pedido
+    Public Function añadirPedido(idpedido As String, idcliente As String)
+        Dim ok As Boolean
+
+        Dim fecha As String = DateTime.Now.ToString("dd-MM-yyyy")
+        Dim bi As Double = baseImponible()
+        Dim iva As Integer = 10
+
+
 
         Return ok
     End Function

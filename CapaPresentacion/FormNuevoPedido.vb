@@ -4,6 +4,7 @@ Imports CapaNegocio
 Public Class FormNuevoPedido
 
     Dim objVentas As New CNVentas
+    Dim clienteBloqueado As Boolean = False
 
     Private Sub FormNuevoPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtIdPedido.Text = objVentas.nuevoIDPedido
@@ -100,10 +101,52 @@ Public Class FormNuevoPedido
             dgvLineas.DataSource = objVentas.listarTablaIntermedia()
             listarStock()
             listarEnvases()
+            If clienteBloqueado = False Then
+                cbxCliente.Enabled = False
+                clienteBloqueado = True
+            End If
         Else
             MessageBox.Show("Ha ocurrido un error.")
         End If
 
     End Sub
 
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If dgvLineas.Rows.Count > 1 Then
+            Dim row = dgvLineas.CurrentRow
+            Dim idpedido As String = row.Cells(0).Value.ToString
+            Dim idproducto As String = row.Cells(1).Value.ToString
+            Dim idenvase As String = row.Cells(2).Value.ToString
+            Dim nlote As String = row.Cells(3).Value.ToString
+            Dim unidades As Integer = row.Cells(4).Value
+            Dim precio As Double = row.Cells(5).Value
+            Dim bi As Double = row.Cells(6).Value
+
+            Dim linea As New CELinea(idpedido, idproducto, idenvase, nlote, unidades, precio, bi)
+
+            Dim ok = objVentas.eliminarLinea(linea)
+
+            If ok Then
+                MessageBox.Show("Se ha eliminado correctamente.")
+                dgvLineas.DataSource = objVentas.listarTablaIntermedia()
+                listarStock()
+                listarEnvases()
+            Else
+                MessageBox.Show("Ha ocurrido un error.")
+            End If
+        Else
+            MessageBox.Show("No existen registros para eliminar.")
+        End If
+    End Sub
+
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Dim idpedido As String = txtIdPedido.Text
+        Dim idcliente As String = txtIdCliente.Text
+
+
+        Dim ok = objVentas.añadirPedido
+
+
+
+    End Sub
 End Class

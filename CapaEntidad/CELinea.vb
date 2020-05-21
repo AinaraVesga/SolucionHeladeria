@@ -22,6 +22,16 @@
         _bi = bi
     End Sub
 
+    Public Sub New(row As DataRow)
+        _idpedido = row("IDPEDIDO")
+        _idproducto = row("IDPRODUCTO")
+        _idenvase = row("IDENVASE")
+        _nlote = row("NLOTE")
+        _unidades = row("UNIDADES")
+        _precio = row("PRECIOUNIDAD")
+        _bi = row("BASEIMPONIBLE")
+    End Sub
+
     ' Declaramos los getters
     Public ReadOnly Property idpedido As String
         Get
