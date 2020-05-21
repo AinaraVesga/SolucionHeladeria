@@ -144,8 +144,14 @@ Public Class FormNuevoPedido
         Dim idcliente As String = txtIdCliente.Text
 
 
-        Dim ok = objVentas.añadirPedido
+        Dim ok = objVentas.añadirPedido(idpedido, idcliente)
 
+        If ok Then
+            MessageBox.Show("Se ha añadido correctamente.")
+            Close()
+        Else
+            MessageBox.Show("Ha ocurrido un error.")
+        End If
 
 
     End Sub

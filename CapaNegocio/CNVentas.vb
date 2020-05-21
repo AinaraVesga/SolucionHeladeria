@@ -170,7 +170,43 @@ Public Class CNVentas
         Dim bi As Double = baseImponible()
         Dim iva As Integer = 10
 
+        ' comprobamos si el cliente tiene recargo de equivalencia
+        Dim dt As DataTable = objDatosVentas.QryRE(idcliente)
+        Dim tieneRE = dt(0)(0)
+        Dim re As Double
+        If tieneRE = 0 Then
+            re = 0
+        Else
+            re = 1.4
+        End If
 
+        ' creamos instancia de pedido
+        Dim pedido As New CEPedido(idpedido, idcliente, fecha, bi, iva, re)
+        ok = objDatosVentas.insertarPedido(pedido)
+
+        ' actualizamos el stock
+        If ok Then
+            Dim lineasEStock As DataTable = objDatosVentas.QryListarLineasTablaIntermediaStock
+
+            For i As Integer = 0 To lineasEStock.Rows.Count - 1
+                Dim linea As New CEStock(lineasEStock(i))
+                ok = objDatosVentas.CmdUpdateProdStock(linea)
+            Next
+
+        End If
+
+        ' insertamos las lineas de ilineas en lineas
+        If ok Then
+            ok = objDatosVentas.CmdInsertarLineas()
+        End If
+
+        ' eliminamos las tablas intermedias
+        Try
+            objDatosVentas.CmdEliminarTablaEditarStock()
+            objDatosVentas.CmdEliminarTablaIntermedia()
+        Catch ex As Exception
+            Console.WriteLine("No se ha podido eliminar las tablas")
+        End Try
 
         Return ok
     End Function

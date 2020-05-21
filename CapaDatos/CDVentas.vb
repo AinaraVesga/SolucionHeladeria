@@ -188,6 +188,45 @@ Public Class CDVentas
         Return ok
     End Function
 
+    ' editar unidades en stock de la tabla prodstock
+    Public Function CmdUpdateProdStock(s As CEStock)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "UPDATE PRODSTOCK 
+                SET UNIDADES = @unidades 
+                WHERE IDPRODUCTO = @idproducto AND IDENVASE = @idenvase AND NLOTE = @nlote"
+            cmd.Parameters.AddWithValue("@unidades", s.unidades)
+            cmd.Parameters.AddWithValue("@idproducto", s.idproducto)
+            cmd.Parameters.AddWithValue("@idenvase", s.idenvase)
+            cmd.Parameters.AddWithValue("@nlote", s.nlote)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
+    ' listar todas las lineas de una tabla
+    Function QryListarLineasTablaIntermediaStock() As DataTable
+        Dim query = "SELECT * FROM ESTOCK"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
     ' crear una tabla intermedia para las líneas a insertar
     Sub CmdCrearTablaIntermedia()
         Dim query = "SELECT * INTO ILINEAS FROM LINEAS WHERE 0=1;"
@@ -316,8 +355,27 @@ Public Class CDVentas
         Return ok
     End Function
 
+    ' insertar todas las líneas de ilineas en lineas
+    Public Function CmdInsertarLineas()
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "INSERT INTO LINEAS SELECT ILINEAS.* FROM ILINEAS;"
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
+    End Function
+
     ' función para obtener el importe total de todas las líneas
-    Function QryBaseImponible() As DataTable
+    Public Function QryBaseImponible() As DataTable
         Dim query = "SELECT SUM(BASEIMPONIBLE) AS BI FROM ILINEAS GROUP BY IDPEDIDO;"
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -328,6 +386,53 @@ Public Class CDVentas
         sqlCommand.Dispose()
         conn.Close()
         Return table
+    End Function
+
+    ' función para saber si un cliente tiene recargo de equivalencia
+    Public Function QryRE(idcliente As String) As DataTable
+        Dim query = "SELECT RE FROM CLIENTES WHERE IDCLIENTE = @idcliente;"
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Dim sqlCommand = New OleDbCommand(query, conn)
+        sqlCommand.Parameters.AddWithValue("@idcliente", idcliente)
+        Dim table = New DataTable()
+        Dim executeReader = sqlCommand.ExecuteReader
+        table.Load(executeReader)
+        sqlCommand.Dispose()
+        conn.Close()
+        Return table
+    End Function
+
+    ' insertar un pedido en la tabla de pedidos
+    Public Function insertarPedido(p As CEPedido)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "INSERT INTO PEDIDOS 
+                 (IDPEDIDO, IDCLIENTE, FECHA, TOTALBASEIMP, IVA, RE, TOTALIVA, TOTALRE, TOTAL, FACTURADO, IDFACTURA) VALUES 
+                 (@idpedido, @idcliente, @fecha, @totalbi, @iva, @re, @totaliva, @totalre, @total, @facturado, @idfactura)"
+            cmd.Parameters.AddWithValue("@idpedido", p.idpedido)
+            cmd.Parameters.AddWithValue("@idcliente", p.idcliente)
+            cmd.Parameters.AddWithValue("@fecha", p.fecha)
+            cmd.Parameters.AddWithValue("@totalbi", p.totalBI)
+            cmd.Parameters.AddWithValue("@iva", p.iva)
+            cmd.Parameters.AddWithValue("@re", p.re)
+            cmd.Parameters.AddWithValue("@totaliva", p.ivaTotal)
+            cmd.Parameters.AddWithValue("@totalre", p.reTotal)
+            cmd.Parameters.AddWithValue("@total", p.total)
+            cmd.Parameters.AddWithValue("@facturado", p.facturado)
+            cmd.Parameters.AddWithValue("@idfactura", p.idfactura)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
     End Function
 
 End Class

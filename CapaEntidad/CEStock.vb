@@ -24,6 +24,16 @@
         _precio = precio
     End Sub
 
+    Public Sub New(row As DataRow)
+        _idproducto = row("IDPRODUCTO")
+        _idenvase = row("IDENVASE")
+        _nlote = row("NLOTE")
+        _numero = row("NUMERO")
+        _consumop = row("CONSUMOPREF")
+        _unidades = row("UNIDADES")
+        _precio = row("PRECIOENVASE")
+    End Sub
+
     ' Declaramos los getters
     Public ReadOnly Property idproducto As String
         Get
