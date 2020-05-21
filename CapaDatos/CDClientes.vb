@@ -65,7 +65,7 @@ Public Class CDClientes
             cmd.Parameters.AddWithValue("@nombre", c.nombre)
             cmd.Parameters.AddWithValue("@direccion", c.direccion)
             cmd.Parameters.AddWithValue("@poblacion", c.poblacion)
-            cmd.Parameters.AddWithValue("@telefono", c.poblacion)
+            cmd.Parameters.AddWithValue("@telefono", c.telefono)
             cmd.Parameters.AddWithValue("@cif", c.cif)
             cmd.Parameters.AddWithValue("@email", c.email)
             cmd.Parameters.AddWithValue("@ncuenta", c.ncuenta)
