@@ -68,6 +68,7 @@
     <Compile Include="CNFacturacion.vb" />
     <Compile Include="CNProductos.vb" />
     <Compile Include="CNStock.vb" />
+    <Compile Include="CNUsuario.vb" />
     <Compile Include="CNVentas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

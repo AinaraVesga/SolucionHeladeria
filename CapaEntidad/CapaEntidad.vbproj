@@ -72,6 +72,7 @@
     <Compile Include="CEPedido.vb" />
     <Compile Include="CEProducto.vb" />
     <Compile Include="CEStock.vb" />
+    <Compile Include="CEUsuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
