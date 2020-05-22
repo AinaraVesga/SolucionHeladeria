@@ -90,6 +90,7 @@ Partial Class FormInicio
         '
         Me.txtPW.Location = New System.Drawing.Point(48, 136)
         Me.txtPW.Name = "txtPW"
+        Me.txtPW.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPW.Size = New System.Drawing.Size(269, 20)
         Me.txtPW.TabIndex = 3
         '

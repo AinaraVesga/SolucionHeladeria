@@ -26,15 +26,21 @@ Public Class FormNuevoUsuario
             MessageBox.Show("Las contraseñas no coinciden.")
         Else
             Dim newUsuario As New CEUsuario(id, usuario, pw)
-            Dim ok As Boolean = objUsuario.nuevoUsuario(newUsuario)
 
-            If ok Then
-                MessageBox.Show("Se ha registrado correctamente.")
+            If objUsuario.buscarUsuario(newUsuario) Then
+                MessageBox.Show("Ya existe un usuario con este nombre.")
             Else
-                MessageBox.Show("Ha ocurrido un error.")
+                Dim ok As Boolean = objUsuario.nuevoUsuario(newUsuario)
+
+                If ok Then
+                    MessageBox.Show("Se ha registrado correctamente.")
+                Else
+                    MessageBox.Show("Ha ocurrido un error.")
+                End If
+
+                Close()
             End If
 
-            Close()
         End If
 
 
