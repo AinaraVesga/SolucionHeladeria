@@ -36,8 +36,8 @@ Public Class CDStock
 
     ' Obtener el número que toca del lote
     Function QryUltNumeroLote(idproducto As String) As DataTable
-        Dim query = "SELECT MAX(NUMERO) AS NUM
-                    FROM PRODSTOCK
+        Dim query = "SELECT NUMERO
+                    FROM PRODUCTOS
                     WHERE IDPRODUCTO LIKE @idproducto;"
         Dim conn = conexion.getConnection()
         conn.Open()
@@ -49,6 +49,29 @@ Public Class CDStock
         sqlCommand.Dispose()
         conn.Close()
         Return table
+    End Function
+
+    ' Actualizar el último número de lote de la tabla productos
+    Public Function CmdUpdateNumeroProducto(idproducto As String, numero As Integer)
+        Dim ok = False
+        Dim conn = conexion.getConnection()
+        conn.Open()
+        Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "UPDATE PRODUCTOS 
+                SET NUMERO = @numero 
+                WHERE IDPRODUCTO = @idproducto"
+            cmd.Parameters.AddWithValue("@numero", numero)
+            cmd.Parameters.AddWithValue("@idproducto", idproducto)
+            cmd.ExecuteNonQuery()
+            ok = True
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            ok = False
+        Finally
+            conn.Close()
+        End Try
+        Return ok
     End Function
 
     'Listar envases

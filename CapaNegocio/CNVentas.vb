@@ -3,7 +3,7 @@ Imports CapaEntidad
 
 Public Class CNVentas
 
-    Dim objDatosVentas As New CDVentas
+    Private objDatosVentas As New CDVentas
 
     Public Function obtenerPedidos() As DataTable
         Return objDatosVentas.QryListarPedidos

@@ -3,8 +3,8 @@ Imports CapaNegocio
 
 Public Class FormNuevoPedido
 
-    Dim objVentas As New CNVentas
-    Dim clienteBloqueado As Boolean = False
+    Private objVentas As New CNVentas
+    Private clienteBloqueado As Boolean = False
 
     Private Sub FormNuevoPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtIdPedido.Text = objVentas.nuevoIDPedido

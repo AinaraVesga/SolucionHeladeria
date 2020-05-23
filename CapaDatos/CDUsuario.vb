@@ -4,7 +4,7 @@ Imports System.Data.OleDb
 
 Public Class CDUsuario
 
-    Dim conexion As New CDConexion
+    Private conexion As New CDConexion
 
     ' funcion para comprobar si un usuario ya existe
     Function QryBuscarUsuario(u As CEUsuario) As DataTable

@@ -5,6 +5,7 @@ Public Class FormAñadirStock
     Dim objStock As New CNStock
     Dim tablaEnvases As DataTable
     Dim numero As Integer
+    Dim idproducto As String
 
     ' FUNCIONES DEL PANEL MAIN 1
     Private Sub FormAñadirStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,6 +28,7 @@ Public Class FormAñadirStock
         Dim id As String = dv.Row("IDPRODUCTO")
         Dim prod As String = dv.Row("NOMBRE")
 
+        idproducto = id
         txtID.Text = id
         Dim lote = objStock.setNumeroLote(id)
         txtLote.Text = lote.nlote
@@ -94,7 +96,7 @@ Public Class FormAñadirStock
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        objStock.insertarStock()
+        objStock.insertarStock(idproducto, numero)
         Close()
     End Sub
 

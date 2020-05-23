@@ -26,11 +26,7 @@ Public Class CNStock
         Dim row As DataRow = dt.Rows(0)
         Dim num As Integer
 
-        If IsDBNull(row("NUM")) Then
-            num = 1
-        Else
-            num = CInt(row("NUM")) + 1
-        End If
+        num = CInt(row("NUMERO")) + 1
 
         Dim hoy As String = DateTime.Now.ToString("ddMMyyyy")
 
@@ -95,8 +91,9 @@ Public Class CNStock
     End Function
 
     ' Función para insertar los datos de la tabla intermedia al stock y eliminar la tabla intermedia
-    Public Sub insertarStock()
+    Public Sub insertarStock(idproducto As String, numero As Integer)
         objStock.CmdInsertarStock()
+        objStock.CmdUpdateNumeroProducto(idproducto, numero)
         objStock.CmdDropTablaIntermedia()
     End Sub
 

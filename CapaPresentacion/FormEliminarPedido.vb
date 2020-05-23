@@ -3,7 +3,7 @@ Imports CapaNegocio
 
 Public Class FormEliminarPedido
 
-    Dim objVentas As New CNVentas
+    Private objVentas As New CNVentas
 
     Public Sub New(idpedido As String, idcliente As String, fecha As String, totalBi As Double, totalIVA As Double,
                    totalRE As Double, total As Double)
