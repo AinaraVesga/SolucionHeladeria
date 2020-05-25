@@ -107,7 +107,7 @@ Public Class CNStock
     ' Función para obtener la capacidad de un envase
     Public Function capacidadEnvase(idenvase As String)
         Dim dt = objStock.QryCapacidadEnvase(idenvase)
-        Dim capacidad As Double = dt.Rows(0)("CAPACIDAD")
+        Dim capacidad As String = dt.Rows(0)("CAPACIDAD")
         Return capacidad
     End Function
 

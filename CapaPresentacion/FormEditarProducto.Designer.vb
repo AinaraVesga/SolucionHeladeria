@@ -50,9 +50,9 @@ Partial Class FormEditarProducto
         Me.lblAñadirProd.ForeColor = System.Drawing.SystemColors.Control
         Me.lblAñadirProd.Location = New System.Drawing.Point(38, 16)
         Me.lblAñadirProd.Name = "lblAñadirProd"
-        Me.lblAñadirProd.Size = New System.Drawing.Size(206, 24)
+        Me.lblAñadirProd.Size = New System.Drawing.Size(204, 24)
         Me.lblAñadirProd.TabIndex = 2
-        Me.lblAñadirProd.Text = "AÑADIR PRODUCTO"
+        Me.lblAñadirProd.Text = "EDITAR PRODUCTO"
         '
         'btnAceptar
         '

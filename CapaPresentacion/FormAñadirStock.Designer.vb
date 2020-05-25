@@ -33,6 +33,7 @@ Partial Class FormAñadirStock
         Me.cbxProducto = New System.Windows.Forms.ComboBox()
         Me.lblProducto = New System.Windows.Forms.Label()
         Me.panBody2 = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.txtID2 = New System.Windows.Forms.TextBox()
@@ -48,7 +49,6 @@ Partial Class FormAñadirStock
         Me.lblLote2 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.lblProducto2 = New System.Windows.Forms.Label()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.panTitulo.SuspendLayout()
         Me.panBody1.SuspendLayout()
         Me.panBody2.SuspendLayout()
@@ -103,6 +103,7 @@ Partial Class FormAñadirStock
         '
         'txtID
         '
+        Me.txtID.Enabled = False
         Me.txtID.Location = New System.Drawing.Point(244, 45)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(72, 20)
@@ -173,6 +174,15 @@ Partial Class FormAñadirStock
         Me.panBody2.Name = "panBody2"
         Me.panBody2.Size = New System.Drawing.Size(1200, 385)
         Me.panBody2.TabIndex = 2
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(1046, 19)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 15
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'txtPrecio
         '
@@ -302,22 +312,13 @@ Partial Class FormAñadirStock
         Me.lblProducto2.TabIndex = 0
         Me.lblProducto2.Text = "Producto:"
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(1046, 19)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar.TabIndex = 15
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
         'FormAñadirStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(360, 268)
-        Me.Controls.Add(Me.panBody2)
         Me.Controls.Add(Me.panBody1)
+        Me.Controls.Add(Me.panBody2)
         Me.Controls.Add(Me.panTitulo)
         Me.Name = "FormAñadirStock"
         Me.Text = "AñadirStock"
