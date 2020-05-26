@@ -109,6 +109,7 @@ Partial Class FormNuevoProducto
         Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormNuevoProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormNuevoProducto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

@@ -273,6 +273,7 @@ Partial Class FormEditarCliente
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.panTitulo)
         Me.Name = "FormEditarCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditarCliente"
         Me.panTitulo.ResumeLayout(False)
         Me.panTitulo.PerformLayout()

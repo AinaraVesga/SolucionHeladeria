@@ -385,6 +385,7 @@ Partial Class FormMain
         Me.Controls.Add(Me.panMenu)
         Me.Controls.Add(Me.panContenedor)
         Me.Name = "FormMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormClientes"
         Me.panMenu.ResumeLayout(False)
         Me.panMenu.PerformLayout()

@@ -240,6 +240,7 @@ Partial Class FormVerPedido
         Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormVerPedido"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormVerPedido"
         CType(Me.dgvLineas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

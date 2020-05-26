@@ -273,6 +273,7 @@ Partial Class FormNuevoCliente
         Me.Controls.Add(Me.cbRecargo)
         Me.Controls.Add(Me.btnAceptar)
         Me.Name = "FormNuevoCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Cliente"
         Me.panTitulo.ResumeLayout(False)
         Me.panTitulo.PerformLayout()

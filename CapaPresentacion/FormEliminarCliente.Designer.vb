@@ -132,6 +132,7 @@ Partial Class FormEliminarCliente
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "FormEliminarCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEliminarCliente"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

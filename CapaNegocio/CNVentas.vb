@@ -147,9 +147,7 @@ Public Class CNVentas
         If ok Then
             Dim dt As DataTable = objDatosVentas.QryUnidadesStock(l)
             Dim unidades As Integer = dt(0)(0)
-            MsgBox(unidades)
             unidades += l.unidades
-            MsgBox(unidades)
             ok = objDatosVentas.CmdUpdateTablaEditarStock(l.idproducto, l.idenvase, l.nlote, unidades)
         End If
 

@@ -344,6 +344,7 @@ Partial Class FormNuevoPedido
         Me.Controls.Add(Me.lblIdPedido)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormNuevoPedido"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

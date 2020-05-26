@@ -132,6 +132,7 @@ Partial Class FormEliminarProducto
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormEliminarProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEliminarProducto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

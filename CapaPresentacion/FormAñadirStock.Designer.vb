@@ -321,6 +321,7 @@ Partial Class FormAñadirStock
         Me.Controls.Add(Me.panBody2)
         Me.Controls.Add(Me.panTitulo)
         Me.Name = "FormAñadirStock"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AñadirStock"
         Me.panTitulo.ResumeLayout(False)
         Me.panTitulo.PerformLayout()

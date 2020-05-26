@@ -214,6 +214,7 @@ Partial Class FormEditarStock
         Me.Controls.Add(Me.lblIdProd)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormEditarStock"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditarStock"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

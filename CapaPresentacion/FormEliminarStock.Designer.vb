@@ -153,6 +153,7 @@ Partial Class FormEliminarStock
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormEliminarStock"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEliminarStock"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

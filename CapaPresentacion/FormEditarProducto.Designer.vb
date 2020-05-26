@@ -109,6 +109,7 @@ Partial Class FormEditarProducto
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.lblId)
         Me.Name = "FormEditarProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditarProducto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

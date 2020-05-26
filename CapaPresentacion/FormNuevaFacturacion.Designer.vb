@@ -108,6 +108,7 @@ Partial Class FormNuevaFacturacion
         Me.Controls.Add(Me.lblIdent)
         Me.Controls.Add(Me.panTitulo)
         Me.Name = "FormNuevaFacturacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormNuevaFacturacion"
         Me.panTitulo.ResumeLayout(False)
         Me.panTitulo.PerformLayout()

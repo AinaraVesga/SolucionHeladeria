@@ -25,12 +25,12 @@ Partial Class FormInicio
         Me.btnEmpezar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPW = New System.Windows.Forms.TextBox()
         Me.lblPW = New System.Windows.Forms.Label()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.lblUsuario = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,21 +70,15 @@ Partial Class FormInicio
         Me.Panel1.Size = New System.Drawing.Size(371, 233)
         Me.Panel1.TabIndex = 2
         '
-        'lblUsuario
+        'Label2
         '
-        Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Location = New System.Drawing.Point(45, 72)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(46, 13)
-        Me.lblUsuario.TabIndex = 0
-        Me.lblUsuario.Text = "Usuario:"
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Location = New System.Drawing.Point(48, 88)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(269, 20)
-        Me.txtUsuario.TabIndex = 1
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(44, 35)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(126, 24)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Inicia sesión"
         '
         'txtPW
         '
@@ -103,6 +97,22 @@ Partial Class FormInicio
         Me.lblPW.TabIndex = 2
         Me.lblPW.Text = "Contraseña:"
         '
+        'txtUsuario
+        '
+        Me.txtUsuario.Location = New System.Drawing.Point(48, 88)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(269, 20)
+        Me.txtUsuario.TabIndex = 1
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Location = New System.Drawing.Point(45, 72)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(46, 13)
+        Me.lblUsuario.TabIndex = 0
+        Me.lblUsuario.Text = "Usuario:"
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ControlDark
@@ -112,16 +122,6 @@ Partial Class FormInicio
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Nuevo Usuario"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(44, 35)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(126, 24)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Inicia sesión"
         '
         'FormInicio
         '
@@ -133,6 +133,7 @@ Partial Class FormInicio
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormInicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
