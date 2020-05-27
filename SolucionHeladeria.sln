@@ -18,6 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{4DCE6FA8-E986-
 		DatabaseHeladeria.accdb = DatabaseHeladeria.accdb
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOCUMENTACIÓN", "DOCUMENTACIÓN", "{7B70659D-A2BA-4085-BD6E-E3E32727AB9D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\Documentación Final.pdf = ..\..\..\Downloads\Documentación Final.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +55,7 @@ Global
 		{DED1FC3B-26FC-47ED-8D39-810499255FB0} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 		{CF07A5AB-8D8D-43D3-B19E-2B78DD026355} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 		{4DCE6FA8-E986-4E42-A2EB-F5F17334B862} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
+		{7B70659D-A2BA-4085-BD6E-E3E32727AB9D} = {AD90F375-8E32-4C85-A741-ED05C494D3CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7400FC4-9DF8-4198-B1CB-DE5A1F9C0BEC}
